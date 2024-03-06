@@ -9,6 +9,7 @@ import Shop from './pages/Shop';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Header from './component/DefaultLayout/Header';
+import HeaderBottom from './component/DefaultLayout/Header/HeaderBottom';
 
 {/*====================Layout Component==================== */}
 const Layout = () =>{
@@ -27,6 +28,7 @@ const Layout = () =>{
             theme="colored"
         />
         <Header />
+        <HeaderBottom />
     </div>
   )
 }
