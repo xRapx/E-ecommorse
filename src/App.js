@@ -10,9 +10,13 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Header from './component/DefaultLayout/Header';
 import HeaderBottom from './component/DefaultLayout/Header/HeaderBottom';
+import AddUser from './dexie/AddUser';
+
+
 
 {/*====================Layout Component==================== */}
 const Layout = () =>{
+
   return(
     <div>
         <ToastContainer
@@ -29,6 +33,7 @@ const Layout = () =>{
         />
         <Header />
         <HeaderBottom />
+        <AddUser/>
     </div>
   )
 }
@@ -43,13 +48,12 @@ const router = createBrowserRouter(
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/admin" element={<pagesAD />}></Route>
 
         </Route>
     </Route>
   )
 )
-
-
 
 function App() {
   return (
