@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
 import { MdClose } from "react-icons/md";
 
-import logo from '../../../assets/images/logo.jpg'
+import logo from '../../../assets/images/unnamed.png'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout";
 import {navBarList} from "../../../contans"

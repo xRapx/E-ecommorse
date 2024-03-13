@@ -1,6 +1,6 @@
 /* eslint-disable no-lone-blocks */
 
-import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
+import {Outlet, Route, RouterProvider, ScrollRestoration, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,7 +10,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Header from './component/DefaultLayout/Header';
 import HeaderBottom from './component/DefaultLayout/Header/HeaderBottom';
-import AddUser from './dexie/AddUser';
+import Cart from './pages/Cart';
 
 
 
@@ -33,7 +33,8 @@ const Layout = () =>{
         />
         <Header />
         <HeaderBottom />
-        <AddUser/>
+        <ScrollRestoration />
+        <Outlet />
     </div>
   )
 }
@@ -49,7 +50,7 @@ const router = createBrowserRouter(
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/admin" element={<pagesAD />}></Route>
-
+          <Route path="/cart" element={<Cart />}></Route>
         </Route>
     </Route>
   )

@@ -5,16 +5,18 @@ import {HiOutlineMenuAlt4} from "react-icons/hi";
 import {FaSearch ,FaUser,FaCaretDown ,FaShoppingCart} from "react-icons/fa"; 
 import {BsSuitHeartFill}  from "react-icons/bs";
 import {motion} from "framer-motion";
+
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {cateloryItems} from "../../../contans"
 import FlexHeader from "../CustomLayout";
-import { useSelector } from "react-redux";
+
 
 function HeaderBottom() {
 
 // Truy cập vào trạng thái trong store của redux để lấy dữ liệu hoặc filter dữ liệu
-	const products = useSelector((state) => state.EcommorseReducer.products);
+	const products = useSelector((state) => state.ecommorseReducer.products);
 
 	const [show, setShow] = useState(false)
 	const [showUser, setShowUser] = useState(false)
@@ -22,6 +24,16 @@ function HeaderBottom() {
 
 	const divRef = useRef()
 	const navigate= useNavigate()
+
+	useEffect(() => {
+		document.body.addEventListener("click", (e) => {
+		if (divRef.current.contains(e.target)) {
+			setShow(true);
+		} else {
+			setShow(false);
+		}
+		});
+	}, [show, divRef]);
 
 	const [searchValue,setSearchValue] = useState('')
 	const [filterProducts,SetFilterProducts] = useState([]) 
