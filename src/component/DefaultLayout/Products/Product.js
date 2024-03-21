@@ -1,19 +1,20 @@
 /* eslint-disable no-unused-vars */
 import Image from "../CustomLayout/Image";
+import {useEffect} from "react"
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../redux/rootReducer";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
-import {GiReturnArrow} from "react-icons/gi";
 import {BsSuitHeartFill} from "react-icons/bs";
 
 function Badge () {
 	return <div></div>
 }
 
-function Products(props) {
+function Product(props) {
 
 	const dispatch = useDispatch();
+
 	const _id = props.productName;
 
 	const productItem = props;
@@ -96,4 +97,4 @@ function Products(props) {
 	 );
 }
 
-export default Products;
+export default Product;

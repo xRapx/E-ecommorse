@@ -18,7 +18,7 @@ export const store = configureStore({
 	reducer: {ecommorseReducer: persistedReducer},
 	middleware:(getDefaultMiddleware) => getDefaultMiddleware({
 		serializableCheck: {
-			// Danh sách các middleware hổ trợ từ redux-persist dễ dàng hơn là tự tạo
+			// serializableCheck được sử dụng để xác định các action nào sẽ được bỏ qua trong quá trình lưu trữ dữ liệu.
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         },
 	})

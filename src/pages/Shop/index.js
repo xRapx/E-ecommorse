@@ -5,7 +5,7 @@ import ProductBanner from "../../component/DefaultLayout/containerShop/ShowProdu
 import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts/Pagination";
 
 const Shop = () => {
-  const [itemsPerPage, setItemsPerPage] = useState(48);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);
   };

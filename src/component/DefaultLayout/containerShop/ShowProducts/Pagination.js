@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { Fragment, useState } from "react";
-import {cateloryItems} from "../../../../contans"
-import Products from "../../Products/Prodcuts";
+import { Fragment, useEffect, useState } from "react";
+// import {cateloryItems} from "../../../../contans"
+import Product from "../../Products/Product";
 import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
+import { setupServer } from "../../../../Server/mirageServer";
 
-const items = cateloryItems
-console.log(items)
+//use Server
+setupServer()
+
+
 
 //xét điều kiện để render item products
 function Items ({currentItems,selectedBrands ,selectedCategories}){
@@ -25,7 +28,7 @@ function Items ({currentItems,selectedBrands ,selectedCategories}){
 		<Fragment>
 			{filterItems.map((item) =>(
 				<div key={item._id} className="w-full">
-					<Products
+					<Product
 						_id={item._id}
 						img={item.img}
 						productName={item.productName}
@@ -43,14 +46,33 @@ function Items ({currentItems,selectedBrands ,selectedCategories}){
 	)
 }
 // Mặc định 1 trang có 48 item
-function Pagination({itemsPerPage}) {
+function Pagination({itemsPerPage}) { // số lượng là 3
 //Ban dầu page
 	const [itemOffset, setItemOffset] = useState(0);
 //Khởi đầu page
 	const [itemStart, setItemStart] = useState(1)
 //kết thúc page
 	const endOffset = itemOffset + itemsPerPage;
-	const currentItems = items.slice(itemOffset, endOffset);
+
+	const [value , setValue] = useState([])
+	console.log(value)
+
+	useEffect(() => {
+		const URL = "/contans/products"
+		const fetchData = async () => {
+			try {
+				const response = await fetch(URL);
+				const data = await response.json();
+				setValue(data);
+			} catch (error) {
+				console.error('Error fetching data:', error);
+			}
+		};
+	
+		fetchData();
+	}, []);
+
+	const currentItems = value.slice(itemOffset, endOffset);
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false
 	const selectedBrands = useSelector(
@@ -60,14 +82,18 @@ function Pagination({itemsPerPage}) {
 		(state) => state.ecommorseReducer.checkedCategorys
 	);
 	
-	const pageCount = Math.ceil(items.length / itemsPerPage);
+	const pageCount = Math.ceil(value.length / itemsPerPage);
 
 	const handlePageClick = (event) =>{
-// để mảng item mới ko vượt quá 48 thì tính từ nơi Selected * 48 % 48 = 0 
-		const newOffset = (event.selected * itemsPerPage)  % items.length 
-	// 0 + 1 = 1 newStart trang mới
+		console.log(event)
+		
+// để mảng item mới ko vượt quá 48 thì tính từ nơi Selected 0 * 48 % 48 = 0 
+		const newOffset = (event.selected * itemsPerPage)  % value.length 
+
+// 0 + 1 = 1 newStart trang mới
 		const newStart = newOffset + 1;
-	// Set lại state khi chuyển page
+
+// Set lại state khi chuyển page
 	setItemOffset(newOffset) // bắt đầu lại trang từ 1
 	setItemStart(newStart)	// chuyển mới thì bầng 2
 
@@ -88,9 +114,9 @@ function Pagination({itemsPerPage}) {
 		  <ReactPaginate
 		  	nextLabel="" 					
 			onPageChange={handlePageClick} // xử lý hàm phân trang
-			pageRangeDisplayed={3}         // Số lượng nút trang được hiển thị trong thanh phân trang.
+			pageRangeDisplayed={2}         // Số lượng nút trang được hiển thị trong thanh phân trang.
 			marginPagesDisplayed={2}	  // Số lượng nút trang ở hai đầu thanh phân trang. 
-			pageCount={pageCount}		// Hàm xử lý được gọi khi người dùng chuyển đổi giữa các trang.
+			pageCount={pageCount}		
 			previousLabel=""
 			pageLinkClassName="w-9 h-9 border-[1px] border-lightColor hover:border-gray-500 duration-300 flex justify-center items-center"
 			pageClassName="mr-6"
@@ -99,8 +125,8 @@ function Pagination({itemsPerPage}) {
 			/>
 
 			<p className="text-base font-normal text-lightText">
-			Products from {itemStart} to {Math.min(endOffset, items.length)} of{" "}
-			{items.length}
+			Products from {itemStart} to {Math.min(endOffset, value.length)} of{" "}
+			{value.length}
 			</p>
 			<button onClick={() => console.log(selectedBrands)}> Next Page</button>
 		</div>

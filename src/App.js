@@ -11,8 +11,11 @@ import Contact from './pages/Contact';
 import Header from './component/DefaultLayout/Header';
 import HeaderBottom from './component/DefaultLayout/Header/HeaderBottom';
 import Cart from './pages/Cart';
+import { setupServer } from './Server/mirageServer';
+import { useEffect } from 'react';
 
 
+setupServer();
 
 {/*====================Layout Component==================== */}
 const Layout = () =>{
@@ -57,8 +60,14 @@ const router = createBrowserRouter(
 )
 
 function App() {
+
+  useEffect(() =>{  
+         fetch("/contans/products").then(res => res.json()).then(res => console.log(res))
+  },[])
+
+
   return (
-    <div className="App">
+    <div className="font-bodyFont">
         <RouterProvider router={router} />
     </div>
   );
