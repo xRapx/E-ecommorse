@@ -11,7 +11,7 @@ const initialState = {
 
 export const ecommorseSlice = createSlice({
 	name: 'ecommorse',
-	initialState,
+	initialState ,
 	reducers:{
 		addToCart : (state, action) =>{
 			const item = state.products.find(
