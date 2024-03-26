@@ -5,7 +5,6 @@ import {HiMenuAlt2} from "react-icons/hi"
 import { MdClose } from "react-icons/md";
 
 import logo1 from '../../../assets/images/logo1.jpg'
-import logo from '../../../assets/images/logo.jpg'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
@@ -85,7 +84,7 @@ function Header() {
 {/*=======================Logo If Nav Resize ============================*/}								
 							<img
 								className="w-28 mb-6 h-28"
-								src={logo}
+								src={logo1}
 								alt="logo"
 							/>
 							<ul className="text-gray-200 flex flex-col gap-2">

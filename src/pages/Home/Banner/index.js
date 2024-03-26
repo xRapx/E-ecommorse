@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// Thư viện 
+// Thư viện slick để thay đổi cấu hình slider
 import Slider from "react-slick";
 
-import bannerImgOne from "../../../assets/images/unnamed.png";
+import bannerImgOne from "../../../assets/images/logo1.jpg";
 import Image from "../../../component/DefaultLayout/CustomLayout/Image";
 
 const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
@@ -19,7 +19,7 @@ const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
     <div
       style={{
         maxWidth: "450px", // Adjust the maxWidth as needed
-        marginRight: "100px", // Add margin between text/button and image
+        marginLeft: "100px", // Add margin between text/button and image
       }}
     >
       <h1
@@ -88,24 +88,26 @@ const Banner = () => {
         style={
           i === dotActive
             ? {
-                width: "30px",
+                width: "25px",
                 color: "#262626",
                 borderRight: "3px #262626 solid",
                 padding: "8px 0",
                 cursor: "pointer",
-              }
+            }
             : {
-                width: "30px",
+                width: "25px",
                 color: "transparent",
                 borderRight: "3px white solid",
                 padding: "8px 0",
                 cursor: "pointer",
-              }
+            }
         }
       >
         0{i + 1}
       </div>
     ),
+    
+
     responsive: [
       {
         breakpoint: 576,
