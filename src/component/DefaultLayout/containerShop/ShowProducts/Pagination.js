@@ -1,14 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { Fragment, useEffect, useState } from "react";
-// import {cateloryItems} from "../../../../contans"
+import {cateloryItems} from "../../../../contans"
 import Product from "../../Products/Product";
 import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
-import { setupServer } from "../../../../Server/mirageServer";
-
-//use Server
-setupServer()
-
+console.log(cateloryItems)
 
 
 //xét điều kiện để render item products
@@ -54,25 +50,7 @@ function Pagination({itemsPerPage}) { // số lượng là 3
 //kết thúc page
 	const endOffset = itemOffset + itemsPerPage;
 
-	const [value , setValue] = useState([])
-	console.log(value)
-
-	useEffect(() => {
-		const URL = "/contans/products"
-		const fetchData = async () => {
-			try {
-				const response = await fetch(URL);
-				const data = await response.json();
-				setValue(data);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-	
-		fetchData();
-	}, []);
-
-	const currentItems = value.slice(itemOffset, endOffset);
+	const currentItems = cateloryItems.slice(itemOffset, endOffset);
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false
 	const selectedBrands = useSelector(
@@ -82,13 +60,13 @@ function Pagination({itemsPerPage}) { // số lượng là 3
 		(state) => state.ecommorseReducer.checkedCategorys
 	);
 	
-	const pageCount = Math.ceil(value.length / itemsPerPage);
+	const pageCount = Math.ceil(cateloryItems.length / itemsPerPage);
 
 	const handlePageClick = (event) =>{
 		console.log(event)
 		
 // để mảng item mới ko vượt quá 48 thì tính từ nơi Selected 0 * 48 % 48 = 0 
-		const newOffset = (event.selected * itemsPerPage)  % value.length 
+		const newOffset = (event.selected * itemsPerPage)  % cateloryItems.length 
 
 // 0 + 1 = 1 newStart trang mới
 		const newStart = newOffset + 1;
@@ -125,8 +103,8 @@ function Pagination({itemsPerPage}) { // số lượng là 3
 			/>
 
 			<p className="text-base font-normal text-lightText">
-			Products from {itemStart} to {Math.min(endOffset, value.length)} of{" "}
-			{value.length}
+			Products from {itemStart} to {Math.min(endOffset, cateloryItems.length)} of{" "}
+			{cateloryItems.length}
 			</p>
 			<button onClick={() => console.log(selectedBrands)}> Next Page</button>
 		</div>

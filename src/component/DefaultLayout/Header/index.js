@@ -4,9 +4,10 @@ import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
 import { MdClose } from "react-icons/md";
 
-import logo from '../../../assets/images/unnamed.png'
+import logo1 from '../../../assets/images/logo1.jpg'
+import logo from '../../../assets/images/logo.jpg'
 import Image from '../../DefaultLayout/CustomLayout/Image'
-import FlexHeader from "../CustomLayout";
+import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
 
 
@@ -37,7 +38,7 @@ function Header() {
 					<Link to='/'>
 	{/*=======================Logo Image ============================*/}				
 					<div>
-						<Image className="w-32 object-contain h-16" imgSrc={logo} />
+						<Image className="w-32 object-contain h-16" imgSrc={logo1} />
 					</div>
 					</Link>
 	{/*=======================Ul/Li Navbar ============================*/}

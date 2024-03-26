@@ -35,7 +35,7 @@ export const navBarList = [
 	  badge: true,
 	  brand: "Pantum",
 	  des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-	  cat: "catelory 1",
+	  cat: "catelory_1",
 	  ficheTech: [
 		{ label: "Name : Descreption 1 ", value: "Text : Descreption 1" },
 		{ label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -60,7 +60,7 @@ export const navBarList = [
 		badge: true,
 		brand: "Pantum",
 		des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		cat: "catelory 2",
+		cat: "catelory_2",
 		ficheTech: [
 		  { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
 		  { label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -85,7 +85,7 @@ export const navBarList = [
 		badge: true,
 		brand: "Pantum",
 		des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		cat: "catelory 1",
+		cat: "catelory_1",
 		ficheTech: [
 		  { label: "Name : Descreption 3 ", value: "Text : Descreption 3" },
 		  { label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -110,7 +110,7 @@ export const navBarList = [
 		badge: true,
 		brand: "Pantum",
 		des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		cat: "catelory 1",
+		cat: "catelory_1",
 		ficheTech: [
 		  { label: "Name : Descreption 4 ", value: "Text : Descreption 4" },
 		  { label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -135,7 +135,7 @@ export const navBarList = [
 		badge: true,
 		brand: "Pantum",
 		des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		cat: "catelory 1",
+		cat: "catelory_1",
 		ficheTech: [
 		  { label: "Name : Descreption 1 ", value: "Text : Descreption 1" },
 		  { label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -160,7 +160,7 @@ export const navBarList = [
 		  badge: true,
 		  brand: "Pantum",
 		  des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		  cat: "catelory 2",
+		  cat: "catelory_2",
 		  ficheTech: [
 			{ label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
 			{ label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -185,7 +185,7 @@ export const navBarList = [
 		  badge: true,
 		  brand: "Pantum",
 		  des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		  cat: "catelory 1",
+		  cat: "catelory_1",
 		  ficheTech: [
 			{ label: "Name : Descreption 3 ", value: "Text : Descreption 3" },
 			{ label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },
@@ -210,7 +210,7 @@ export const navBarList = [
 		  badge: true,
 		  brand: "Pantum",
 		  des: "Imprimante Laser PANTUM Couleur - Fonctions: Impression  - Technologie d'impression: Laser - Format Papier: A4 - Vitesse d’impression(Couleur/N&B): 24 ppm (A4) / 26 ppm (Lettre) - Résolution d'impression: 600 x 600 dpi - Sortie papier: 100 page - Mémoire: Double cœur, 1 GHz - Impression recto verso: Automatique - Heure de la première impression: Moins de 11s  - Connecteurs: USB 2.0 haut débit Ethernet 10/100/1000 BaseTX (RJ-45) 802.11b/g/n Sans fil - Dimensions: 411.2 x 394.1 x 243.7mm - Poids: 16,1 kg - Couleur: Blanc",
-		  cat: "catelory 1",
+		  cat: "catelory_1",
 		  ficheTech: [
 			{ label: "Name : Descreption 4 ", value: "Text : Descreption 4" },
 			{ label: "Print speed ", value: "22 ppm (A4)/23 ppm (Letter)" },

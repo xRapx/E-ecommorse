@@ -5,11 +5,19 @@ import {resetCart} from "../../redux/rootReducer"
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCart";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
+import emptyCart from "../../assets/images/emptyCart.png"
 
 
 function Cart () {
 	const dispatch = useDispatch();
-	const products = useSelector((state) => state.ecommorseReducer.products)
+// Khi nào có Response trả về từ server mới sử dụng mã này :
+		// const products = useSelector((state) => state.ecommorseReducer.products)
+	const products = useSelector((state) => state.ecommorseReducer.products );
+		
+// Sử dụng tạm thời sản phẩm lưu trữ trong localStorage
+	// const Items = JSON.parse(localStorage.getItem("Products"))
+	// const products = Object.values(Items)
+	
 //State tính tổng và ship	
 	const [totalAmt, setTotalAmt] = useState("");
 	const [shippingCharge, setShippingCharge] = useState("");
@@ -117,7 +125,7 @@ function Cart () {
 			<div>
 					<img
 					className="w-80 rounded-lg p-4 mx-auto"
-					src=""
+					src={emptyCart}
 					alt="emptyCart"
 					/>
 				</div>	
