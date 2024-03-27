@@ -11,6 +11,7 @@ const Category = () => {
   const checkedCategorys = useSelector(
     (state) => state.ecommorseReducer.checkedCategorys
   );
+  console.log(checkedCategorys)
   const dispatch = useDispatch();
 
   const category = [
@@ -49,7 +50,7 @@ const Category = () => {
               <input
                 type="checkbox"
                 id={item._id}
-                checked={checkedCategorys.some((b) => b._id === item._id)}
+                checked={checkedCategorys.some((b) =>  b._id === item._id)}
                 onChange={() => handleToggleCategory(item)}
               />
               {item.title}
