@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 
 import { useDispatch } from "react-redux";
@@ -45,13 +45,13 @@ const SignIn = () => {
 		  setErrPassword("Create a password");
 		}
 		// ============== Getting the value ==============
-		if (email && password) {
-		  setSuccessMsg(
-			`Hello dear, Thank you for your attempt. We are processing to validate your access. Till then stay connected and additional assistance will be sent to you by your mail at ${email}`
-		  );
-		  setEmail("");
-		  setPassword("");
-		}
+		// if (email && password) {
+		//   setSuccessMsg(
+		// 	`Hello dear, Thank you for your attempt. We are processing to validate your access. Till then stay connected and additional assistance will be sent to you by your mail at ${email}`
+		//   );
+		//   setEmail("");
+		//   setPassword("");
+		// }
 		// Post Data
 		const data = {
 			email :email,
@@ -68,7 +68,14 @@ const SignIn = () => {
 			window.location.href = "/";
 
 		  } catch (error) {
-			toast.error('Failed to login:')
+			if (error.response && error.response.status === 403) {
+				alert('Failed to login:');
+			  }
+			  setSuccessMsg(
+				`Hello dear, Thank you for your attempt. But Account not register , Please Signup and continue Login with ${email}`
+			  );
+			  setEmail("");
+			  setPassword("");
 			// Xử lý lỗi tại đây, ví dụ: hiển thị thông báo lỗi cho người dùng
 		  }
 
@@ -147,7 +154,7 @@ const SignIn = () => {
 		  <div className="w-full lgl:w-1/2 h-full">
 			{successMsg ? (
 			  <div className="w-full lgl:w-[500px] h-full flex flex-col justify-center">
-				<p className="w-full px-4 py-10 text-green-500 font-medium font-titleFont">
+				<p className="w-full px-4 py-10 text-red-500 font-medium font-titleFont">
 				  {successMsg}
 				</p>
 				<Link to="/signup">

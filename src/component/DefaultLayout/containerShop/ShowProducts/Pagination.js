@@ -4,8 +4,6 @@ import {cateloryItems} from "../../../../contans"
 import Product from "../../Products/Product";
 import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
-console.log(cateloryItems)
-
 
 //xét điều kiện để render item products
 function Items ({currentItems,selectedBrands ,selectedCategories}){
@@ -51,6 +49,7 @@ function Pagination({itemsPerPage}) { // số lượng là 3
 	const endOffset = itemOffset + itemsPerPage;
 
 	const currentItems = cateloryItems.slice(itemOffset, endOffset);
+	console.log(currentItems)
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false
 	const selectedBrands = useSelector(

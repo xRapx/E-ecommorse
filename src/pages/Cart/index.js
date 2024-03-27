@@ -13,6 +13,7 @@ function Cart () {
 // Khi nào có Response trả về từ server mới sử dụng mã này :
 		// const products = useSelector((state) => state.ecommorseReducer.products)
 	const products = useSelector((state) => state.ecommorseReducer.products );
+	console.log(products)
 		
 // Sử dụng tạm thời sản phẩm lưu trữ trong localStorage
 	// const Items = JSON.parse(localStorage.getItem("Products"))
