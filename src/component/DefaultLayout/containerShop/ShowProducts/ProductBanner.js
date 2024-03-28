@@ -2,8 +2,29 @@ import React, { useEffect, useState } from "react";
 import { BsGridFill } from "react-icons/bs";
 import { ImList } from "react-icons/im";
 import { GoTriangleDown } from "react-icons/go";
+import { useDispatch } from "react-redux";
+import { handleArrangement } from "../../../../redux/reducer/arrangeReducer";
 
 const ProductBanner = ({ itemsPerPageFromBanner }) => {
+
+  const dispatch = useDispatch()
+  const [arrangement , setArrangement] = useState(false)
+
+  const handleGridClick = () => {
+   if(!arrangement){
+      const newArrange = !arrangement // false
+      setArrangement(newArrange)
+      dispatch(handleArrangement(newArrange))
+   }
+  }
+  const handleListClick = () => {
+    if(arrangement){
+       const newArrange = !arrangement // true
+       setArrangement(newArrange)
+       dispatch(handleArrangement(newArrange))
+    }
+   }
+
   //   const [selected, setSelected] = useState("");
   const [girdViewActive, setGridViewActive] = useState(true);
   const [listViewActive, setListViewActive] = useState(false);
@@ -35,7 +56,7 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
               : "border-[1px] border-gray-300 text-[#737373]"
           } w-8 h-8 text-lg flex items-center justify-center cursor-pointer gridView`}
         >
-          <BsGridFill />
+          <BsGridFill onClick={handleGridClick }/>
         </span>
         <span
           className={`${
@@ -44,7 +65,7 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
               : "border-[1px] border-gray-300 text-[#737373]"
           } w-8 h-8 text-base flex items-center justify-center cursor-pointer listView`}
         >
-          <ImList />
+          <ImList onClick={handleListClick }/>
         </span>
       </div>
       {/* =========================================================

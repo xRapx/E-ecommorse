@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 
 const Special = () => {
 	
-  const products = useSelector((state) => state.ecommorseReducer.products);
+  const products = useSelector((state) => state.products.product);
+  console.log(products)
 
   return (
     <div className="fixed top-52 right-2 z-20 hidden md:flex flex-col gap-2">

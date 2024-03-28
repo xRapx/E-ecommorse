@@ -1,11 +1,7 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
 import { useDispatch } from "react-redux";
-import {
-  deleteItem,
-  drecreaseQuantity,
-  increaseQuantity,
-} from "../../redux/rootReducer";
+import { deleteItem, drecreaseQuantity, increaseQuantity } from "../../redux/reducer/productReducer";
 
 const ItemCard = ({ item }) => {
 	// Call Dispath from react-redux

@@ -6,7 +6,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 // import { toast } from "react-toastify";
-import { login } from "../../redux/rootReducer";
+import { login } from "../../redux/reducer/userReducer";
 
 
 const SignUp = () => {

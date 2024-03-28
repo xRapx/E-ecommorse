@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
 
 //xét điều kiện để render item products
-function Items ({currentItems,selectedBrands ,selectedCategories}){
+function Items ({currentItems,selectedBrands ,selectedCategories }){
 	// Filter item when user selected on base
 		const filterItems = currentItems.filter((item) =>{
 	//KHi người dùng chọn filter vào Brand sản phẩm
@@ -40,7 +40,8 @@ function Items ({currentItems,selectedBrands ,selectedCategories}){
 	)
 }
 // Mặc định 1 trang có 48 item
-function Pagination({itemsPerPage}) { // số lượng là 3
+function Pagination({itemsPerPage }) { // số lượng là 3
+
 //Ban dầu page
 	const [itemOffset, setItemOffset] = useState(0);
 //Khởi đầu page
@@ -49,14 +50,14 @@ function Pagination({itemsPerPage}) { // số lượng là 3
 	const endOffset = itemOffset + itemsPerPage;
 
 	const currentItems = cateloryItems.slice(itemOffset, endOffset);
-	console.log(currentItems)
+	// console.log(currentItems)
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false
 	const selectedBrands = useSelector(
-		(state) => state.ecommorseReducer.checkedBrands
+		(state) => state.brands.checkedBrands
 	);
 	const selectedCategories = useSelector(
-		(state) => state.ecommorseReducer.checkedCategorys
+		(state) => state.categories.checkedCategorys
 	);
 	
 	const pageCount = Math.ceil(cateloryItems.length / itemsPerPage);

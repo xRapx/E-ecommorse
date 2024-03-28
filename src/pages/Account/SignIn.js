@@ -5,9 +5,9 @@ import { useState } from "react";
 
 
 import { useDispatch } from "react-redux";
-import {login} from "../../redux/rootReducer"
 import logo from "../../assets/images/unnamed.png"
 import axios from "axios";
+import { login } from "../../redux/reducer/userReducer";
 
 
 const SignIn = () => {

@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useMemo, useState } from "react";
 // import { FaPlus } from "react-icons/fa";
 import { ImPlus } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCattegory } from "../../../../../redux/rootReducer";
 import NavTitle from "./NavTitile";
+import { toggleCattegory } from "../../../../../redux/reducer/categoryReducer";
 
 const Category = () => {
   const [showSubCatOne, setShowSubCatOne] = useState(false);
 
   const checkedCategorys = useSelector(
-    (state) => state.ecommorseReducer.checkedCategorys
+    (state) => state.categories.checkedCategorys
   );
-  console.log(checkedCategorys)
+  // console.log(checkedCategorys)
   const dispatch = useDispatch();
 
-  const category = [
+  const category = useMemo(() => [
     {
       _id: 9006,
       title: "Category 1",
@@ -31,7 +32,8 @@ const Category = () => {
       _id: 9009,
       title: "Category 4",
     },
-  ];
+  ]
+);
 
   const handleToggleCategory = (category) => {
     dispatch(toggleCattegory(category));

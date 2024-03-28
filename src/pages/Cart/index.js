@@ -1,18 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {resetCart} from "../../redux/rootReducer"
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCart";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 import emptyCart from "../../assets/images/emptyCart.png"
+import { resetCart } from "../../redux/reducer/productReducer";
 
 
 function Cart () {
 	const dispatch = useDispatch();
-// Khi nào có Response trả về từ server mới sử dụng mã này :
-		// const products = useSelector((state) => state.ecommorseReducer.products)
-	const products = useSelector((state) => state.ecommorseReducer.products );
+// Khi nào có Response trả về từ server mới sử dụng mã này :	
+	const products = useSelector((state) => state.products.product );
 	console.log(products)
 		
 // Sử dụng tạm thời sản phẩm lưu trữ trong localStorage

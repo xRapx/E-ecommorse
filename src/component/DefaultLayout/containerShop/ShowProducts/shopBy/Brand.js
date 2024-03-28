@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleBrand } from "../../../../../redux/rootReducer";
 import NavTitle from "./NavTitile";
+import { toggleBrand } from "../../../../../redux/reducer/brandReducer";
 
 const Brand = () => {
   const [showBrands, setShowBrands] = useState(true);
   const checkedBrands = useSelector(
-    (state) => state.ecommorseReducer.checkedBrands
+    (state) => state.brands.checkedBrands
   );
   const dispatch = useDispatch();
 

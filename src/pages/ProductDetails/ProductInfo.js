@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/rootReducer";
+import { addToCart } from "../../redux/reducer/productReducer";
+
 
 const ProductInfo = ({ productInfo }) => {
   const highlightStyle = {
@@ -38,8 +39,8 @@ const ProductInfo = ({ productInfo }) => {
 		colors: productInfo.color,
 	}
 	dispatch(
-		addToCart(data)
-	  )
+    addToCart(data) 
+    )
   }
 
   return (

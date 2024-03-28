@@ -4,7 +4,10 @@ import ShopSideNav from "../../component/DefaultLayout/containerShop/ShowProduct
 import ProductBanner from "../../component/DefaultLayout/containerShop/ShowProducts/ProductBanner";
 import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts/Pagination";
 
+
 const Shop = () => {
+  
+
   const [itemsPerPage, setItemsPerPage] = useState(48);
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);
@@ -19,7 +22,7 @@ const Shop = () => {
           <ShopSideNav />
         </div>
         <div className="w-full mdl:w-[80%] lgl:w-[75%] h-full flex flex-col gap-10">
-          <ProductBanner itemsPerPageFromBanner={itemsPerPageFromBanner} />
+          <ProductBanner itemsPerPageFromBanner={itemsPerPageFromBanner}/>
           <Pagination itemsPerPage={itemsPerPage} />
         </div>
       </div>

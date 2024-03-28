@@ -17,6 +17,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Offer from './pages/Offer/Offer';
 import Special from './component/Special/Special';
 import Footer from './pages/Footer/Footer';
+import Profile from './pages/Account/User/Profile';
 
 {/*====================Layout Component==================== */}
 const Layout = () =>{
@@ -55,8 +56,8 @@ const router = createBrowserRouter(
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/admin" element={<pagesAD />}></Route>
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/user" element={<Profile />}></Route>
         {/*====================Product==================== */}
           <Route path="/category/:category" element={<Offer />}></Route>
           <Route path="/product/:_id" element={<ProductDetails />}></Route>

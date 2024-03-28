@@ -5,6 +5,7 @@ import { FaFacebook, FaYoutube, FaLinkedin, FaGithub } from "react-icons/fa";
 import  paymentCard  from "../../assets/images/payment.3e00cc601c9e7fc1e7d3.png";
 import Image from "../../component/DefaultLayout/CustomLayout/Image"
 import FooterTitle from "./FooterTitle";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [emailInfo, setEmailInfo] = useState("");
@@ -101,9 +102,11 @@ const Footer = () => {
         <div>
           <FooterTitle title="Your account" />
           <ul className="flex flex-col gap-2">
-            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Profile
-            </li>
+            <Link to= "/user">   
+                <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
+                Profile
+                </li>
+            </Link>
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
               Orders
             </li>

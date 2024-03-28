@@ -10,20 +10,18 @@ import {motion} from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import { logout } from "../../../redux/rootReducer";
 
 import FlexHeader from "../CustomLayout/FlexHeader";
 import { cateloryItems } from "../../../contans";
+import { logout } from "../../../redux/reducer/userReducer";
 
 function HeaderBottom() {
 	const dispatch = useDispatch()
 
 // Truy cập vào trạng thái trong store của redux để lấy dữ liệu hoặc filter dữ liệu
-	const products = useSelector((state) => state.ecommorseReducer.products);
+	const products = useSelector((state) => state.products.product);
 
 	const [show, setShow] = useState(false)
-
-
 
 	const [showUser, setShowUser] = useState(false)
 	
@@ -36,10 +34,10 @@ function HeaderBottom() {
 	useEffect(() => {
 		const handleClick = (e) => {
 			if (ref.current && ref.current.contains(e.target)) {
-			  setShow(true);
+			  setShow(true);			  		 		  	  		 		  
 			} else {
-			  setShow(false);
-			}
+			  setShow(false);			  
+			}		
 		};	
 		  	document.body.addEventListener("click", handleClick);
 		
@@ -47,8 +45,8 @@ function HeaderBottom() {
 		return () => {
 			document.body.removeEventListener("click", handleClick);
 		};
-	}, [show, ref]);
-  
+	}, [ show, ref ]);
+ 
 	const [searchQuery, setSearchQuery] = useState("");
 	const [filteredProducts, setFilteredProducts] = useState([]);
 	// eslint-disable-next-line
@@ -178,8 +176,48 @@ function HeaderBottom() {
 				</div>
 			  )}
 			</div>
-			<div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
-			  <div className="flex" onClick={() => setShowUser(!showUser)}>
+{/*===========================set login/logout================= */}
+			{user ? ( //true
+			<div 
+			href={ref}
+			onClick={() => setShowUser(!showUser)}
+			className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
+		>
+		  <div className="flex" >
+			<FaUser />
+			<FaCaretDown />
+		  </div>
+		  { showUser && (
+			<motion.ul
+			  initial={{ y: 30, opacity: 0 }}                    
+			  animate={{ y: 0, opacity: 1 }}
+			  transition={{ duration: 0.5 }}
+			  className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"				  
+			>
+			{user && (
+			  <Fragment>
+				<Link to="/signin" >
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					  Login
+					</li>
+				</Link>
+				<Link  to="/signup">
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					  Sign Up
+					</li>
+				</Link>  
+			  </Fragment>				
+				)}
+			 </motion.ul>
+		  )}	 
+		</div>				
+			) : (
+				<div 
+				href={ref}
+				onClick={() => setShowUser(!showUser)}
+				className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
+			>
+			  <div className="flex" >
 				<FaUser />
 				<FaCaretDown />
 			  </div>
@@ -190,27 +228,16 @@ function HeaderBottom() {
 				  transition={{ duration: 0.5 }}
 				  className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"				  
 				>
-				{user ? (
-				  <Fragment>
-					<Link to="/signin" >
-						<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-						  Login
-						</li>
-					</Link>
-					<Link  to="/signup">
-						<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-						  Sign Up
-						</li>
-					</Link>  
-				  </Fragment>
-					) : (
+				{!user && (
 					  <Fragment>
 						<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
 						  Details
 						</li>
-						<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-						  Profile
-						</li>						
+						<Link  to="/user">
+							<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+							Profile
+							</li>
+						</Link>													
 						<li 
 							onClick={handleLogout }
 							className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
@@ -228,8 +255,9 @@ function HeaderBottom() {
 				  </span>
 				</div>
 			  </Link>
-			  <BsSuitHeartFill />
+			  <BsSuitHeartFill/>	 
 			</div>
+			)}
 		  </FlexHeader>
 		</div>
 	  </div>
