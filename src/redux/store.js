@@ -2,12 +2,25 @@ import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./rootReducer";
 import storage from "redux-persist/lib/storage";
 import {persistReducer,persistStore, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
+import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
+import createMigrate from "redux-persist/es/createMigrate";
+
+const migrations = {
+	2: (oldState) => {
+	  return {
+		...oldState,
+		newKey: 'initial value', // giá trị khởi tạo cho key mới
+	  };
+	},
+  };
 
 // Mặc định cho cấu hình tuỳ chọn lưu trữ Key =... và nơi lưu trữ Store mặc định
 const productConfig = {
 	key: "root",
 	version: 1,
 	storage,
+	stateReconciler: autoMergeLevel2,
+  	migrate: createMigrate(migrations , { debug: true }), // luôn bật debug
 }
 
 // Giữ lại dữ liệu ngay cả khi trình duyệt tắt and reload
