@@ -8,9 +8,9 @@ import Image from "../../../component/DefaultLayout/CustomLayout/Image";
 
 const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
   <div
+    className="bg-white dark:bg-slate-900"
     style={{
-      position: "relative",
-      backgroundColor: "#F5F5F3", // Gray background color
+      position: "relative", // Gray background color
       display: "flex",
       justifyContent: "center",
       alignItems: "center", // Center vertically
@@ -22,27 +22,27 @@ const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
         marginLeft: "100px", // Add margin between text/button and image
       }}
     >
-      <h1
+      <h2
+      className=" dark:text-white"
         style={{
           marginBottom: "15px",
           fontSize: "2.5rem", // Adjust the font size as needed
-          color: "#000", // Black color
           fontWeight: "700",
         }}
       >
         {text}
-      </h1>
+      </h2>
       <p
+      className=" dark:text-white"
         style={{
           marginBottom: "25px",
           fontSize: "1.5rem", // Adjust the font size as needed
-          color: "#666", // Gray color
         }}
       >
         {Subtext}
       </p>
-      <Link to={console.log(buttonLink)}>
-        <button className="bg-primeColor text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold">
+      <Link to={buttonLink}>
+        <button className="bg-slate-500 dark:bg-white  dark:text-black text-white text-lg font-bodyFont w-[185px] h-[50px] hover:bg-slate-700 duration-300 font-bold">
           {buttonText}
         </button>
       </Link>
@@ -83,7 +83,7 @@ const Banner = () => {
     ),
     
     customPaging: (i) => (
-      <div
+      <div 
         style={
           i === dotActive
             ? {
@@ -102,7 +102,6 @@ const Banner = () => {
             }
         }
       >
-        0{i + 1}
       </div>
     ),
     

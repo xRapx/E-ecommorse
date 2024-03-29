@@ -178,40 +178,24 @@ function HeaderBottom() {
 			</div>
 {/*===========================set login/logout================= */}
 			{user ? ( //true
-			<div 
-			href={ref}
-			onClick={() => setShowUser(!showUser)}
-			className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
-		>
-		  <div className="flex" >
-			<FaUser />
-			<FaCaretDown />
-		  </div>
-		  { showUser && (
-			<motion.ul
-			  initial={{ y: 30, opacity: 0 }}                    
-			  animate={{ y: 0, opacity: 1 }}
-			  transition={{ duration: 0.5 }}
-			  className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"				  
-			>
-			{user && (
-			  <Fragment>
-				<Link to="/signin" >
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-					  Login
-					</li>
-				</Link>
-				<Link  to="/signup">
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-					  Sign Up
-					</li>
-				</Link>  
-			  </Fragment>				
-				)}
-			 </motion.ul>
-		  )}	 
-		</div>				
-			) : (
+				<div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
+					<div className="flex" >						
+						<Link to="/signin" >
+							<button className="items-center justify-center min-w-24 px-4 py-2 rounded text-base font-medium mr-4 cursor-pointer bg-white border-b-gray-400 hover:bg-slate-100 shadow-lg">
+								Login
+							</button>		
+						</Link>
+						<Link  to="/signup">
+							<button className="items-center justify-center min-w-24 px-4 py-2 rounded text-base font-medium mr-4 cursor-pointer bg-white border-b-gray-400 hover:bg-slate-100 shadow-lg">
+								SignUp
+							</button>	
+						</Link>  
+						
+					</div>		  	
+				</div>				
+			) 
+			: 
+			(
 				<div 
 				href={ref}
 				onClick={() => setShowUser(!showUser)}

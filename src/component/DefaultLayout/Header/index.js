@@ -2,12 +2,13 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
-import { MdClose } from "react-icons/md";
+import { MdClose, MdOutlineLightMode } from "react-icons/md";
 
 import logo1 from '../../../assets/images/logo1.jpg'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
+import { FaLightbulb } from "react-icons/fa";
 
 
 function Header() {
@@ -15,6 +16,37 @@ function Header() {
 	const [sidenav, setSidenav] = useState(false);
 	const [category, setCategory] = useState(false);
 	const [brand, setBrand] = useState(false);
+// =======================DarkMode==============
+	const [dark ,setDark] = useState(true)
+	const userTheme = localStorage.getItem("theme");
+	console.log(userTheme)
+	const systemTheme = window.matchMedia("(prefers-color-scheme:dark)").matches
+	console.log(systemTheme)
+
+	// const handleMode = () => {
+	// 	if(userTheme === "dark" || (!userTheme && systemTheme)){
+	// 		document.documentElement.classList.add("dark");
+	// 		return				
+	// 	}
+	// 		document.documentElement.classList.add("light");	
+	// }
+
+	const themeSwitch = () => {
+		if(document.documentElement.classList.contains("dark")){			
+			document.documentElement.classList.remove("dark");
+			setDark(true)		
+            localStorage.setItem("theme" ,"light");
+			// handleMode()
+				
+			return
+		}
+		document.documentElement.classList.add("dark");
+		document.documentElement.classList.remove("light");
+		setDark(false)		
+		localStorage.setItem("theme" ,"dark");
+		// handleMode()	
+		
+	}
 
 	const location = useLocation();
 
@@ -37,9 +69,14 @@ function Header() {
 					<Link to='/'>
 	{/*=======================Logo Image ============================*/}				
 					<div>
-						<Image className="w-32 object-contain h-16" imgSrc={logo1} />
+						<Image className="w-32 object-contain h-16 bg-transparent" imgSrc={logo1} />
 					</div>
 					</Link>
+	{/*=======================Dark Mode ============================*/}
+					<div className="flex text-2xl">
+						{dark ? (<MdOutlineLightMode onClick={themeSwitch}/>) : (<FaLightbulb onClick={themeSwitch}/>)}					
+					</div>
+
 	{/*=======================Ul/Li Navbar ============================*/}
 					<div>
 						{showMenu && (

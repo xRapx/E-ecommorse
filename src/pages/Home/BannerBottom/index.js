@@ -1,7 +1,7 @@
 
 
 function BannerBottom() {
-	return ( <div className="w-full bg-white border-b-[1px] py-4 border-b-gray-200 px-4">
+	return ( <div className="w-full bg-white dark:bg-slate-900 border-b-[1px] py-4 border-b-gray-200 px-4">
 	<div className="max-w-container mx-auto h-20 flex flex-col md:flex-row justify-between items-center">
 	<div className="flex items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
 	  <span className="font-bold font-titleFont w-6 text-center">
@@ -35,7 +35,7 @@ function BannerBottom() {
 		  </g>
 		</svg>
 	  </span>
-	  <p className="text-lightText text-base">Two years warranty</p>
+	  <p className="text-lightText dark:text-white text-base">Two years warranty</p>
 	</div>
 	<div className="flex md:w-auto items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
 	  <span className="text-5xl text-center w-10 ml-1 text-orange-500">
@@ -49,9 +49,9 @@ function BannerBottom() {
 		  ></path>
 		</svg>
 	  </span>
-	  <p className="text-xl text-lightText text-base">
+	  <p className="text-xl text-lightText dark:text-white text-base">
 		Free shipping <br />{" "}
-		<span className="text-xs text-lightText text-base">
+		<span className="text-xs text-lightText dark:text-white text-base">
 		  Free Shipping World Wide
 		</span>
 	  </p>
@@ -88,7 +88,7 @@ function BannerBottom() {
 		  ></path>
 		</svg>
 	  </span>
-	  <p className="text-lightText text-base">Return policy in 30 days</p>
+	  <p className="text-lightText dark:text-white text-base">Return policy in 30 days</p>
 	</div>
   </div>
 	</div> );
