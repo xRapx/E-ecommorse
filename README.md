@@ -1,1 +1,1 @@
-e-ecommorse.vercel.app
+ecommorse.vercel.app
