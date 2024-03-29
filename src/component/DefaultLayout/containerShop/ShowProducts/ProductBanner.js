@@ -2,26 +2,30 @@ import React, { useEffect, useState } from "react";
 import { BsGridFill } from "react-icons/bs";
 import { ImList } from "react-icons/im";
 import { GoTriangleDown } from "react-icons/go";
-import { useDispatch } from "react-redux";
-import { handleArrangement } from "../../../../redux/reducer/arrangeReducer";
+// import { useDispatch } from "react-redux";
+// import { handleArrangement } from "../../../../redux/reducer/arrangeReducer";
+import { ProductContext } from "../../../../context/Product.Context";
 
 const ProductBanner = ({ itemsPerPageFromBanner }) => {
-
-  const dispatch = useDispatch()
-  const [arrangement , setArrangement] = useState(false)
+//================== Redux ==================================
+  // const dispatch = useDispatch()
+  // const [arrangement , setArrangement] = useState(false)
+//================== Context ==================================
+  const {setArrangement,arrangement} = ProductContext()
 
   const handleGridClick = () => {
    if(!arrangement){
       const newArrange = !arrangement // false
-      setArrangement(newArrange)
-      dispatch(handleArrangement(newArrange))
+    setArrangement(newArrange)
+      // dispatch(handleArrangement(newArrange))
    }
   }
+
   const handleListClick = () => {
     if(arrangement){
        const newArrange = !arrangement // true
-       setArrangement(newArrange)
-       dispatch(handleArrangement(newArrange))
+    setArrangement(newArrange)
+      //  dispatch(handleArrangement(newArrange))
     }
    }
 
