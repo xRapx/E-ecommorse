@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/images/unnamed.png"
+import logo from "../../assets/images/logo1.jpg"
 import { BsCheckCircleFill } from "react-icons/bs";
 import axios from "axios";
 import { useDispatch } from "react-redux";

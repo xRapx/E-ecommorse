@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 
+
 const About = () => {
   const location = useLocation();
   const [prevLocation, setPrevLocation] = useState("");

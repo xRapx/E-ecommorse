@@ -30,12 +30,12 @@ const Footer = () => {
     }
   };
   return (
-    <div className="w-full bg-[#F5F5F3] py-20">
+    <div className="w-full bg-[#F5F5F3] dark:bg-slate-900 py-20">
       <div className="max-w-container mx-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-6 px-4 gap-10">
         <div className="col-span-2">
           <FooterTitle title=" More about Ecommorse Shop" />
           <div className="flex flex-col gap-6">
-            <p className="text-base w-full xl:w-[80%]">
+            <p className="text-base dark:text-white w-full xl:w-[80%]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint
               ab ullam, numquam nesciunt in.
             </p>
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
         <div>
           <FooterTitle title="Shop" />
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 dark:text-white ">
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
               Accesories
             </li>
@@ -101,7 +101,7 @@ const Footer = () => {
         </div>
         <div>
           <FooterTitle title="Your account" />
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 dark:text-white">
             <Link to= "/user">   
                 <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
                 Profile
@@ -124,7 +124,7 @@ const Footer = () => {
         <div className="col-span-2 flex flex-col items-center w-full px-4">
           <FooterTitle title="Subscribe to our newsletter." />
           <div className="w-full">
-            <p className="text-center mb-4">
+            <p className="text-center mb-4 dark:text-white">
               A at pellentesque et mattis porta enim elementum.
             </p>
             {subscription ? (
