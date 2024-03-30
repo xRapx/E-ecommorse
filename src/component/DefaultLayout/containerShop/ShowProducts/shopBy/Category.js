@@ -43,7 +43,7 @@ const Category = () => {
     <div className="w-full">
       <NavTitle title="Shop by Category" icons={true} />
       <div>
-        <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
+        <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676] dark:text-white">
           {category.map((item) => (
             <li
               key={item._id}

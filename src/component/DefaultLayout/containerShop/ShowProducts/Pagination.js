@@ -102,11 +102,11 @@ function Pagination({itemsPerPage }) { // số lượng là 3
 			activeClassName="bg-black text-white"
 			/>
 
-			<p className="text-base font-normal text-lightText">
+			<p className="text-base font-normal text-lightText dark:text-white">
 			Products from {itemStart} to {Math.min(endOffset, cateloryItems.length)} of{" "}
 			{cateloryItems.length}
 			</p>
-			<button onClick={() => console.log(selectedBrands)}> Next Page</button>
+			<button className="dark:text-white" onClick={() => console.log(selectedBrands)}> Next Page</button>
 		</div>
 	  </div>
 	 );

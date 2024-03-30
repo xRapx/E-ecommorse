@@ -78,48 +78,50 @@ function HeaderBottom() {
 	}, [searchQuery]);
   
 	return (
-	  <div className="w-full bg-[#F5F5F3] relative">
+	  <div className="w-full bg-[#F5F5F3] dark:bg-slate-900 relative">
 		<div className="max-w-container mx-auto">
 		  <FlexHeader className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full px-4 pb-4 lg:pb-0 h-full lg:h-24">
+{/**==================Sub Menu ============================= */}
 			<div
 			  onClick={() => setShow(!show)}
 			  ref={ref}
-			  className="flex h-14 cursor-pointer items-center gap-2 text-primeColor"
+			  className="flex h-14 cursor-pointer items-center gap-2 text-primeColor dark:text-white"
 			>
 			  <HiOutlineMenuAlt4 className="w-5 h-5" />
-			  <p className="text-[14px] font-normal">Shop by Category</p>
+			  <p className="text-[14px] font-normal ">Shop by Category</p>
   
 			  {show && (
 				<motion.ul
 				  initial={{ y: 30, opacity: 0 }}
 				  animate={{ y: 0, opacity: 1 }}
 				  transition={{ duration: 0.5 }}
-				  className="absolute top-16 z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
+				  className="absolute top-16 z-50 bg-primeColor dark:bg-white w-auto text-[#767676] dark:text-white dark:text-white h-auto p-4 pb-6"
 				>
 				  <Link to={"category/imprimante"}>
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white  hover:text-white dark:hover:text-black duration-300 cursor-pointer">
 					 	Category 1
 					</li>
 				  </Link>
   
 				  <Link to={"category/ancre"}>
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
 						Category 2
 					</li>
 				  </Link>
 				  <Link to={"category/Ruban"}>
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
 						Category 3
 					</li>
 				  </Link>
 				  <Link to={"category/Bac"}>
-					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
 						Category 4
 					</li>
 				  </Link>
 				</motion.ul>
 			  )}
 			</div>
+{/**======================== Search Query ======================================== */}	
 			<div className="relative w-full lg:w-[600px] h-[50px] text-base text-primeColor bg-white flex items-center gap-2 justify-between px-6 rounded-xl">
 			  <input
 				className="flex-1 h-full outline-none placeholder:text-[#C4C4C4] placeholder:text-[14px]"

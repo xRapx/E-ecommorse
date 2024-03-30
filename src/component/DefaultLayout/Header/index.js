@@ -8,7 +8,7 @@ import logo1 from '../../../assets/images/logo1.jpg'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
-import { FaLightbulb } from "react-icons/fa";
+import { FaRegLightbulb } from "react-icons/fa";
 
 
 function Header() {
@@ -63,7 +63,7 @@ function Header() {
 	  }, []);
 
 	return ( 
-		<div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
+		<div className="w-full h-20 bg-white dark:bg-slate-900 sticky top-0 z-50 border-b-[1px] border-b-gray-200">
 			<nav className="h-full px-4 max-w-container mx-auto relative">
 				<FlexHeader className='flex items-center justify-between h-full'>
 					<Link to='/'>
@@ -74,7 +74,7 @@ function Header() {
 					</Link>
 	{/*=======================Dark Mode ============================*/}
 					<div className="flex text-2xl">
-						{dark ? (<MdOutlineLightMode onClick={themeSwitch}/>) : (<FaLightbulb onClick={themeSwitch}/>)}					
+						{dark ? (<MdOutlineLightMode onClick={themeSwitch}/>) : (<FaRegLightbulb className="dark:bg-white" onClick={themeSwitch}/>)}					
 					</div>
 
 	{/*=======================Ul/Li Navbar ============================*/}
@@ -91,11 +91,11 @@ function Header() {
 							{navBarList.map(({_id, title, link }) =>(
 								<NavLink
 									key={_id}
-									className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+									className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] dark:text-white hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
 									to={link}
 									state={{ data: location.pathname.split("/")[1] }}
 								>
-								<li>{title}</li>
+								<li className="dark:text-white dark:underline">{title}</li>
 								</NavLink>
 							))
 
@@ -110,7 +110,7 @@ function Header() {
 						/>
 {/*=======================Nav Resize Respon ============================*/}					  
 					{sidenav && (
-						<div className="fixed top-0 left-0 w-full h-screen bg-black text-gray-200 bg-opacity-80 z-50">
+						<div className="fixed top-0 left-0 w-full h-screen bg-black text-gray-200  bg-opacity-80 z-50">
 						<motion.div
 							initial={{ x: -300, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}

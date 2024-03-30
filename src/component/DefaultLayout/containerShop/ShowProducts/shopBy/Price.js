@@ -38,7 +38,7 @@ const Price = () => {
     <div className="cursor-pointer">
       <NavTitle title="Shop by Price" icons={false} />
       <div className="font-titleFont">
-        <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
+        <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676] dark:text-white">
           {priceList.map((item) => (
             <li
               key={item._id}

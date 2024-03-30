@@ -103,9 +103,7 @@ const Banner = () => {
         }
       >
       </div>
-    ),
-    
-
+    ),   
     responsive: [
       {
         breakpoint: 576,
