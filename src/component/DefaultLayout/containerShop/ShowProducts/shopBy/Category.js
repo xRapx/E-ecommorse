@@ -18,19 +18,19 @@ const Category = () => {
   const category = useMemo(() => [
     {
       _id: 9006,
-      title: "Category 1",
+      title: "Heels",
     },
     {
       _id: 9007,
-      title: "Category 2",
+      title: "Sandals",
     },
     {
       _id: 9008,
-      title: "Category 3",
+      title: "Flats",
     },
     {
       _id: 9009,
-      title: "Category 4",
+      title: "Sneakers",
     },
   ]
 );

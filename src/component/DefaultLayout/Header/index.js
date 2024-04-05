@@ -2,13 +2,13 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
-import { MdClose, MdOutlineLightMode } from "react-icons/md";
+import { MdClose, MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 import logo1 from '../../../assets/images/logo1.jpg'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
-import { FaRegLightbulb } from "react-icons/fa";
+// import { FaRegLightbulb } from "react-icons/fa";
 
 
 function Header() {
@@ -68,13 +68,13 @@ function Header() {
 				<FlexHeader className='flex items-center justify-between h-full'>
 					<Link to='/'>
 	{/*=======================Logo Image ============================*/}				
-					<div>
-						<Image className="w-32 object-contain h-16 bg-transparent" imgSrc={logo1} />
+					<div className="w-16 h-16 overflow-hidden rounded-full">
+						<Image className="w-full h-full object-cover" imgSrc={logo1} />
 					</div>
 					</Link>
 	{/*=======================Dark Mode ============================*/}
 					<div className="flex text-2xl">
-						{dark ? (<MdOutlineLightMode onClick={themeSwitch}/>) : (<FaRegLightbulb className="dark:bg-white" onClick={themeSwitch}/>)}					
+						{dark ? (<MdDarkMode onClick={themeSwitch}/>) : (<MdOutlineLightMode className="dark:text-white" onClick={themeSwitch}/>)}					
 					</div>
 
 	{/*=======================Ul/Li Navbar ============================*/}

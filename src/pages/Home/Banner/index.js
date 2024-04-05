@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // Thư viện slick để thay đổi cấu hình slider
 import Slider from "react-slick";
 
-import bannerImgOne from "../../../assets/images/logo1.jpg";
 import Image from "../../../component/DefaultLayout/CustomLayout/Image";
 
 const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
@@ -48,7 +47,7 @@ const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
       </Link>
     </div>
     <div style={{ marginLeft: "100px" }}>
-      <Image imgSrc={imgSrc} />
+      <Image imgSrc={imgSrc} className="rounded-t-lg p-8 w-full min-h-59 min-w-128"/>
     </div>
   </div>
 );
@@ -151,7 +150,7 @@ const Banner = () => {
 
   const slides = [
     {
-      imgSrc: bannerImgOne,
+      imgSrc: "https://m.media-amazon.com/images/I/71jeoX0rMBL._AC_UX575_.jpg",
       text: "Enhance Your Printing Experience",
       Subtext:
         "Explore our premium printers and consumables for exceptional results",
@@ -159,7 +158,7 @@ const Banner = () => {
       buttonText: "Shop Now",
     },
     {
-      imgSrc: bannerImgOne,
+      imgSrc: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
       text: "Quality Printing Solutions",
       Subtext:
         "Discover our wide range of printers and consumables designed for professional printing needs.",
@@ -167,7 +166,7 @@ const Banner = () => {
       buttonText: "About-us",
     },
     {
-      imgSrc: bannerImgOne,
+      imgSrc: "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
       text: "Efficiency Redefined",
       Subtext:
         "Maximize productivity with our advanced printers and high-quality consumables. ",

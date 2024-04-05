@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 import ShopSideNav from "../../component/DefaultLayout/containerShop/ShowProducts/ShopSideNav";
-import SpecialOffers from "../Home/SpecialOffers";
+import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts/Pagination";
+
 
 
 const Offer = () => {
@@ -20,7 +20,7 @@ const Offer = () => {
           <ShopSideNav />
         </div>
         <div className="w-full mdl:w-[80%] lgl:w-[75%] h-full flex flex-col gap-10">
-          <SpecialOffers />
+          <Pagination />
         </div>
       </div>
       {/* ================= Products End here ===================== */}

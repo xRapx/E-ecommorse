@@ -97,25 +97,25 @@ function HeaderBottom() {
 				  transition={{ duration: 0.5 }}
 				  className="absolute top-16 z-50 bg-primeColor dark:bg-white w-auto text-[#767676] dark:text-white dark:text-white h-auto p-4 pb-6"
 				>
-				  <Link to={"category/imprimante"}>
+				  <Link to={"/shop"}>
 					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white  hover:text-white dark:hover:text-black duration-300 cursor-pointer">
-					 	Category 1
+						Sneakers
 					</li>
 				  </Link>
   
-				  <Link to={"category/ancre"}>
+				  <Link to={"/shop"}>
 					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
-						Category 2
+						Flats
 					</li>
 				  </Link>
-				  <Link to={"category/Ruban"}>
+				  <Link to={"/shop"}>
 					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
-						Category 3
+						Sandals
 					</li>
 				  </Link>
-				  <Link to={"category/Bac"}>
+				  <Link to={"/shop"}>
 					<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white dark:hover:text-black duration-300 cursor-pointer">
-						Category 4
+						Heels
 					</li>
 				  </Link>
 				</motion.ul>
@@ -204,8 +204,8 @@ function HeaderBottom() {
 				className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
 			>
 			  <div className="flex" >
-				<FaUser />
-				<FaCaretDown />
+				<FaUser className="dark:text-white" />
+				<FaCaretDown  className="dark:text-white"/>
 			  </div>
 			  { showUser && (
 				<motion.ul
@@ -235,13 +235,13 @@ function HeaderBottom() {
 			  )}
 			  <Link to="/cart">
 				<div className="relative">
-				  <FaShoppingCart />
+				  <FaShoppingCart className="dark:text-white"/>
 				  <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
 					{products.length > 0 ? products.length : 0}
 				  </span>
 				</div>
 			  </Link>
-			  <BsSuitHeartFill/>	 
+			  <BsSuitHeartFill className="dark:text-white"/>	 
 			</div>
 			)}
 		  </FlexHeader>

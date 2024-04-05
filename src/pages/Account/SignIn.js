@@ -5,9 +5,10 @@ import { useState } from "react";
 
 
 import { useDispatch } from "react-redux";
-import logo from "../../assets/images/logo1.jpg"
+import logo1 from "../../assets/images/logo1.jpg"
 import axios from "axios";
 import { login } from "../../redux/reducer/userReducer";
+import Image from "../../component/DefaultLayout/CustomLayout/Image";
 
 
 const SignIn = () => {
@@ -44,14 +45,6 @@ const SignIn = () => {
 		if (!password) {
 		  setErrPassword("Create a password");
 		}
-		// ============== Getting the value ==============
-		// if (email && password) {
-		//   setSuccessMsg(
-		// 	`Hello dear, Thank you for your attempt. We are processing to validate your access. Till then stay connected and additional assistance will be sent to you by your mail at ${email}`
-		//   );
-		//   setEmail("");
-		//   setPassword("");
-		// }
 		// Post Data
 		const data = {
 			email :email,
@@ -62,9 +55,14 @@ const SignIn = () => {
 				headers: {
 					"x-api-key": "7f014f313dacca10fa7fe4c46a82f8cceb865c00a52d31c7149c841f2dab12e4cb1dfd77e2287f305427d53f5210718b5d8ec0b35190f6f1f83bcf2b0d1f08d3"
 				}
-			});
+			});	
+
 			const userToken = response.data.metadata.tokens.accessToken;
-			dispatch(login(userToken))
+			localStorage.setItem('userToken', userToken)
+
+			const userInfo =  response.data.metadata
+			console.log(userInfo)
+			dispatch(login(userInfo))
 			window.location.href = "/";
 
 		  } catch (error) {
@@ -85,9 +83,9 @@ const SignIn = () => {
 		<div className="w-full h-screen flex items-center justify-center">
 		  <div className="w-1/2 hidden lgl:inline-flex h-full text-white">
 			<div className="w-[450px] h-full bg-primeColor px-10 flex flex-col gap-6 justify-center">
-			  <Link to="/">
-				<img src={logo} alt="logoImg" className="w-28" />
-			  </Link>
+			<div className="w-32 h-32 overflow-hidden text-center rounded-full">
+			<Image className="w-full h-full object-cover" imgSrc={logo1} />
+				</div>
 			  <div className="flex flex-col gap-1 -mt-1">
 				<h1 className="font-titleFont text-xl font-medium">
 				  Stay sign in for more

@@ -31,7 +31,7 @@ const ProductInfo = ({ productInfo }) => {
 
 	const data ={
 		_id: productInfo.id,
-		name: productInfo.productName,
+		name: productInfo.title,
 		quantity: 1,
 		image: productInfo.img,
 		badge: productInfo.badge,
@@ -45,7 +45,7 @@ const ProductInfo = ({ productInfo }) => {
 
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-4xl font-semibold">{productInfo.productName}</h2>
+      <h2 className="text-4xl font-semibold">{productInfo.title}</h2>
       <p className="text-2xl font-semibold">
         {productInfo.price} Dt
         <span className="text-xl font-semibold line-through ml-2">540</span>

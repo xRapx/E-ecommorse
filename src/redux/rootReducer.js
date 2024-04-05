@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./reducer/userReducer"
-import brandsReducer from "./reducer/brandReducer"
+import companyReducer from "./reducer/companyReducer"
 import categoriesReducer from "./reducer/categoryReducer"
 import arrangementReducer from "./reducer/arrangeReducer"
 import productsReducer from "./reducer/productReducer"
@@ -8,7 +8,7 @@ import productsReducer from "./reducer/productReducer"
 
 const rootReducer = combineReducers({
 	user: userReducer,
-	brands: brandsReducer,
+	company: companyReducer,
 	categories: categoriesReducer,
 	arrangement: arrangementReducer,
 	products: productsReducer,

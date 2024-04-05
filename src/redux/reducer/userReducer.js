@@ -9,9 +9,8 @@ const userSlice = createSlice({
 	},
 	reducers: {
 	  login: (state, action) => {
-		state.userToken = action.payload;
-		localStorage.setItem('userToken', action.payload)
-		window.location.href = '/'
+		state.userInfo = action.payload;	
+		// window.location.href = '/'
 	  },
 	  logout: (state) => {
 		state.userToken = null;

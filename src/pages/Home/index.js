@@ -3,7 +3,7 @@ import BannerBottom from "./BannerBottom";
 import Sale from "./Sale"
 import NewProducts from "./NewProducts"
 import BestSeller from "./BestSeller"
-import YearProducts from "./YearProducts"
+import FeedBack from "./FeedBack"
 import SpecialOffers from "./SpecialOffers"
 
 function Home() {
@@ -15,8 +15,8 @@ function Home() {
 			<Sale/>
 			<NewProducts/>
 			<BestSeller/>
-			<YearProducts/>
 			<SpecialOffers/>
+			<FeedBack/>
 		</div>
 		</div>
 	);

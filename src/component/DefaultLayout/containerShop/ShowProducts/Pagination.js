@@ -1,22 +1,26 @@
 /* eslint-disable no-unused-vars */
-import { Fragment, useEffect, useState } from "react";
-import {cateloryItems} from "../../../../contans"
+import { Fragment, useState } from "react";
 import Product from "../../Products/Product";
 import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
+import { data } from "../../../../contans/db";
+import { useParams } from "react-router-dom";
+
 
 //xét điều kiện để render item products
-function Items ({currentItems,selectedBrands ,selectedCategories }){
-	// Filter item when user selected on base
-		const filterItems = currentItems.filter((item) =>{
+function Items ({currentItems,selectedCompany ,selectedCategories }){
+
+	//when user filter	company && category
+		const filterItems = currentItems.filter((item) =>{			
 	//KHi người dùng chọn filter vào Brand sản phẩm
-			const isBrandSelected = selectedBrands.length === 0 || selectedBrands.some((brand) => brand.title === item.brand) 
+			const isCompanySelected = selectedCompany.length === 0 || selectedCompany.some((company) => company.title === item.company) 
 	
 	//khi người dùng chọn filter vào Loại sản phẩm		
-			const isCategorySelected = selectedCategories.length === 0 || selectedCategories.some((category) => category.title === item.cat) 
+			const isCategorySelected = selectedCategories.length === 0 || selectedCategories.some((category) => category.title === item.category) 
 		
-		return  isBrandSelected && isCategorySelected
+		return  isCompanySelected && isCategorySelected
 		})
+	
 	
 	return (
 		<Fragment>
@@ -25,7 +29,7 @@ function Items ({currentItems,selectedBrands ,selectedCategories }){
 					<Product
 						_id={item._id}
 						img={item.img}
-						productName={item.productName}
+						title={item.title}
 						price={item.price}
 						color={item.color}
 						badge={item.badge}
@@ -34,7 +38,6 @@ function Items ({currentItems,selectedBrands ,selectedCategories }){
 						ficheTech={item.ficheTech}
 					/>
 				</div>
-
 			))}
 		</Fragment>
 	)
@@ -49,24 +52,25 @@ function Pagination({itemsPerPage }) { // số lượng là 3
 //kết thúc page
 	const endOffset = itemOffset + itemsPerPage;
 
-	const currentItems = cateloryItems.slice(itemOffset, endOffset);
-	// console.log(currentItems)
+	const currentItems = data.slice(itemOffset, endOffset);
+	console.log(currentItems)
+	
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false
-	const selectedBrands = useSelector(
-		(state) => state.brands.checkedBrands
+	const selectedCompany = useSelector(
+		(state) => state.company.checkedCompany
 	);
 	const selectedCategories = useSelector(
 		(state) => state.categories.checkedCategorys
 	);
 	
-	const pageCount = Math.ceil(cateloryItems.length / itemsPerPage);
+	const pageCount = Math.ceil(data.length / itemsPerPage);
 
 	const handlePageClick = (event) =>{
 		console.log(event)
 		
 // để mảng item mới ko vượt quá 48 thì tính từ nơi Selected 0 * 48 % 48 = 0 
-		const newOffset = (event.selected * itemsPerPage)  % cateloryItems.length 
+		const newOffset = (event.selected * itemsPerPage)  % data.length 
 
 // 0 + 1 = 1 newStart trang mới
 		const newStart = newOffset + 1;
@@ -83,7 +87,7 @@ function Pagination({itemsPerPage }) { // số lượng là 3
 		
 		<Items
 			currentItems={currentItems}
-			selectedBrands={selectedBrands}
+			selectedCompany={selectedCompany}
 			selectedCategories={selectedCategories}
 	 	 />{" "}
 
@@ -103,10 +107,10 @@ function Pagination({itemsPerPage }) { // số lượng là 3
 			/>
 
 			<p className="text-base font-normal text-lightText dark:text-white">
-			Products from {itemStart} to {Math.min(endOffset, cateloryItems.length)} of{" "}
-			{cateloryItems.length}
+			Products from {itemStart} to {Math.min(endOffset, data.length)} of{" "}
+			{data.length}
 			</p>
-			<button className="dark:text-white" onClick={() => console.log(selectedBrands)}> Next Page</button>
+			<button className="dark:text-white" onClick={() => console.log(selectedCompany)}> Next Page</button>
 		</div>
 	  </div>
 	 );

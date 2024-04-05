@@ -14,7 +14,6 @@ import Cart from './pages/Cart';
 import SignUp from './pages/Account/SignUp';
 import SignIn from './pages/Account/SignIn';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import Offer from './pages/Offer/Offer';
 import Special from './component/Special/Special';
 import Footer from './pages/Footer/Footer';
 import Profile from './pages/Account/User/Profile';
@@ -59,7 +58,6 @@ const router = createBrowserRouter(
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/user" element={<Profile />}></Route>
         {/*====================Product==================== */}
-          <Route path="/category/:category" element={<Offer />}></Route>
           <Route path="/product/:_id" element={<ProductDetails />}></Route>
         </Route>
         <Route path="/signup" element={<SignUp />}></Route>

@@ -1,10 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
-import logo from "../../../assets/images/unnamed.png";
 import SampleNextArrow from "./SampleNextArrow";
 import SamplePrevArrow from "./SamplePrevArrow";
-import Products from "../../../component/DefaultLayout/Products/Product";
 import Heading from "../../../component/DefaultLayout/Heading/Heading";
+import Product from "../../../component/DefaultLayout/Products/Product";
+import { data } from "../../../contans/db";
+
 
 const NewProducts = () => {
   const settings = {
@@ -44,62 +45,24 @@ const NewProducts = () => {
   return (
     <div className="w-full pb-16">
       <Heading heading="New Products" />
-      <Slider {...settings}>
-        <div className="px-2">
-          <Products
-            _id="100001"
-            img={logo}
-            productName="Round Table Clock"
-            price="44.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
+      <Slider {...settings}>     
+        {data.map((item) =>(
+        <div className="px-2">    
+          <div key={item._id} className="w-full">
+            <Product
+              _id={item._id}
+              img={item.img}
+              title={item.title}
+              price={item.price}
+              color={item.color}
+              badge={item.badge}
+              des={item.des}
+              pdf={item.pdf}
+              ficheTech={item.ficheTech}
+            />
+          </div>
         </div>
-        <div className="px-2">
-          <Products
-            _id="100002"
-            img={logo}
-            productName="Smart Watch"
-            price="250.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Products
-            _id="100003"
-            img={logo}
-            productName="cloth Basket"
-            price="80.00"
-            color="Mixed"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Products
-            _id="100004"
-            img={logo}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Products
-            _id="100005"
-            img={logo}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
+        ))}
       </Slider>
     </div>
   );

@@ -25,7 +25,7 @@ export const navBarList = [
   // =================== NavBarList End here ======================
   
   // =================== Serach Catelory ====================
-  export const cateloryItems = [
+export const cateloryItems = [
 	{
 	  _id: "001",
 	  img: catelory1,
@@ -227,3 +227,4 @@ export const navBarList = [
 		  ],
 		},
 ]
+
