@@ -36,10 +36,9 @@ const Sale = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-2/3 lg:w-1/2 h-auto flex flex-col gap-4 lg:gap-10">
-        <div className="h-1/2 w-full">
-          
-           <div className="aspect-w-4 aspect-h-3 w-full mb-4">
+      <div className="w-full md:w-2/3 lg:w-1/2 h-auto flex flex-col gap-4 lg:gap-10 ">
+        <div className="h-1/2 w-full dark:bg-white">         
+           <div className="aspect-w-4 aspect-h-3 w-full mb-4 ">
               <Image
                 className="h-full w-full object-cover"
                 imgSrc={
@@ -67,7 +66,7 @@ const Sale = () => {
           </div>
 
         </div>
-        <div className="h-1/2 w-full">
+        <div className="h-1/2 w-full dark:bg-white">
           <div className="aspect-w-4 aspect-h-3 w-full mb-4">
             <Image
               className="h-full w-full object-cover"

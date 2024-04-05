@@ -1,7 +1,7 @@
 
 
 function BannerBottom() {
-	return ( <div className="w-full bg-white dark:bg-slate-900 border-b-[1px] py-4 border-b-gray-200 px-4">
+	return ( <div className="w-full bg-white dark:bg-slate-900 border-b-[1px] py-4 border-b-gray-200 px-4 sm:hidden">
 	<div className="max-w-container mx-auto h-20 flex flex-col md:flex-row justify-between items-center">
 	<div className="flex items-center gap-2 w-72 shadow-sm hover:shadow-md duration-300">
 	  <span className="font-bold font-titleFont w-6 text-center">

@@ -85,7 +85,7 @@ const SignIn = () => {
 			<div className="w-[450px] h-full bg-primeColor px-10 flex flex-col gap-6 justify-center">
 			<div className="w-32 h-32 overflow-hidden text-center rounded-full">
 			<Image className="w-full h-full object-cover" imgSrc={logo1} />
-				</div>
+			</div>
 			  <div className="flex flex-col gap-1 -mt-1">
 				<h1 className="font-titleFont text-xl font-medium">
 				  Stay sign in for more

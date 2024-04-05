@@ -76,38 +76,38 @@ function Cart () {
 					  type="text"
 					  placeholder="Coupon Number"
 					/>
-					<p className="text-sm mdl:text-base font-semibold">
+					<p className="text-sm mdl:text-base font-semibold dark:text-white">
 					  Apply Coupon
 					</p>
 				  </div>
-				  <p className="text-lg font-semibold">Update Cart</p>
+				  <p className="text-lg font-semibold dark:text-white">Update Cart</p>
 				</div>
 				<div className="max-w-7xl gap-4 flex justify-end mt-4">
 				  <div className="w-96 flex flex-col gap-4">
-					<h1 className="text-2xl font-semibold text-right">Cart totals</h1>
+					<h1 className="text-2xl font-semibold text-right dark:text-white">Cart totals</h1>
 					<div>
-					  <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
+					  <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium dark:text-white">
 						Subtotal
-						<span className="font-semibold tracking-wide font-titleFont">
+						<span className="font-semibold tracking-wide font-titleFont dark:text-white">
 						  ${totalAmt}
 						</span>
 					  </p>
-					  <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
+					  <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium dark:text-white">
 						Shipping Charge
-						<span className="font-semibold tracking-wide font-titleFont">
+						<span className="font-semibold tracking-wide font-titleFont dark:text-white">
 						  ${shippingCharge}
 						</span>
 					  </p>
-					  <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium">
+					  <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium dark:text-white">
 						Total
-						<span className="font-bold tracking-wide text-lg font-titleFont">
+						<span className="font-bold tracking-wide text-lg font-titleFont dark:text-white">
 						  ${totalAmt + shippingCharge}
 						</span>
 					  </p>
 					</div>
 					<div className="flex justify-end">
 					  <Link to="/paymentgateway">
-						<button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
+						<button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300 ">
 						  Proceed to Checkout
 						</button>
 					  </Link>

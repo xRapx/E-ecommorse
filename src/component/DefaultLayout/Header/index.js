@@ -19,9 +19,9 @@ function Header() {
 // =======================DarkMode==============
 	const [dark ,setDark] = useState(true)
 	const userTheme = localStorage.getItem("theme");
-	console.log(userTheme)
+
 	const systemTheme = window.matchMedia("(prefers-color-scheme:dark)").matches
-	console.log(systemTheme)
+
 
 	// const handleMode = () => {
 	// 	if(userTheme === "dark" || (!userTheme && systemTheme)){
@@ -106,7 +106,7 @@ function Header() {
 						
 						<HiMenuAlt2
 						onClick={() => setSidenav(!sidenav)}
-						className="inline-block md:hidden cursor-pointer w-8 h-6 absolute top-6 right-4"
+						className="inline-block md:hidden dark:text-white cursor-pointer w-8 h-6 absolute top-6 right-4"
 						/>
 {/*=======================Nav Resize Respon ============================*/}					  
 					{sidenav && (
@@ -119,11 +119,9 @@ function Header() {
 						>
 							<div className="w-full h-full bg-primeColor p-6">
 {/*=======================Logo If Nav Resize ============================*/}								
-							<img
-								className="w-28 mb-6 h-28"
-								src={logo1}
-								alt="logo"
-							/>
+							<div className="w-32 h-32 overflow-hidden text-center rounded-full">
+							<Image className="w-full h-full object-cover" imgSrc={logo1} />
+							</div>
 							<ul className="text-gray-200 flex flex-col gap-2">
 								{navBarList.map((item) => (
 								<li
@@ -156,11 +154,10 @@ function Header() {
 									transition={{ duration: 0.4 }}
 									className="text-sm flex flex-col gap-1"
 								>
-									<li className="headerSedenavLi">New Arrivals</li>
-									<li className="headerSedenavLi">Gudgets</li>
-									<li className="headerSedenavLi">Accessories</li>
-									<li className="headerSedenavLi">Electronics</li>
-									<li className="headerSedenavLi">Others</li>
+									<Link to={"/shop"}><li className="headerSedenavLi">Heels</li></Link>
+									<Link to={"/shop"}><li className="headerSedenavLi">Sandals</li></Link>
+									<Link to={"/shop"}><li className="headerSedenavLi">Flats</li></Link>
+									<Link to={"/shop"}><li className="headerSedenavLi">Sneakers</li></Link>
 								</motion.ul>
 								)}
 							</div>
@@ -169,7 +166,7 @@ function Header() {
 								onClick={() => setBrand(!brand)}
 								className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
 								>
-								Shop by Brand
+								Shop by Company
 								<span className="text-lg">{brand ? "-" : "+"}</span>
 								</h1>
 
@@ -180,11 +177,10 @@ function Header() {
 									transition={{ duration: 0.4 }}
 									className="text-sm flex flex-col gap-1"
 								>
-									<li className="headerSedenavLi">New Arrivals</li>
-									<li className="headerSedenavLi">Gudgets</li>
-									<li className="headerSedenavLi">Accessories</li>
-									<li className="headerSedenavLi">Electronics</li>
-									<li className="headerSedenavLi">Others</li>
+								<Link to={"/shop"}><li className="headerSedenavLi">Nike</li></Link>
+								<Link to={"/shop"}><li className="headerSedenavLi">Adidas</li></Link>
+								<Link to={"/shop"}><li className="headerSedenavLi">Puma</li></Link>
+								<Link to={"/shop"}><li className="headerSedenavLi">Vans</li></Link>
 								</motion.ul>
 								)}
 							</div>

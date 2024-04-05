@@ -13,13 +13,13 @@ const ItemCard = ({ item }) => {
       <div className="flex col-span-5 mdl:col-span-2 items-center gap-4 ml-4">
         <ImCross
           onClick={() => dispatch(deleteItem(item._id))}
-          className="text-primeColor hover:text-red-500 duration-300 cursor-pointer"
+          className="text-primeColor hover:text-red-500 duration-300 cursor-pointer dark:text-white"
         />
         <img className="w-32 h-32" src={item.image} alt="productImage" />
-        <h1 className="font-titleFont font-semibold">{item.title}</h1>
+        <h1 className="font-titleFont font-semibold dark:text-white">{item.title}</h1>
       </div>
       <div className="col-span-5 mdl:col-span-3 flex items-center justify-between py-4 mdl:py-0 px-4 mdl:px-0 gap-6 mdl:gap-0">
-        <div className="flex w-1/3 items-center text-lg font-semibold">
+        <div className="flex w-1/3 items-center text-lg font-semibold dark:text-white">
           ${item.price}
         </div>
         <div className="w-1/3 flex items-center gap-6 text-lg">
@@ -29,7 +29,7 @@ const ItemCard = ({ item }) => {
           >
             -
           </span>
-          <p>{item.quantity}</p>
+          <p className="dark:text-white">{item.quantity}</p>
           <span
             onClick={() => dispatch(increaseQuantity({ _id: item._id }))}
             className="w-6 h-6 bg-gray-100 text-2xl flex items-center justify-center hover:bg-gray-300 cursor-pointer duration-300 border-[1px] border-gray-300 hover:border-gray-300"
@@ -37,7 +37,7 @@ const ItemCard = ({ item }) => {
             +
           </span>
         </div>
-        <div className="w-1/3 flex items-center font-titleFont font-bold text-lg">
+        <div className="w-1/3 flex items-center font-titleFont font-bold text-lg dark:text-white">
           <p>${item.quantity * item.price}</p>
         </div>
       </div>
