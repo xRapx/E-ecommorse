@@ -47,8 +47,8 @@ const NewProducts = () => {
       <Heading heading="New Products" />
       <Slider {...settings}>     
         {data.map((item) =>(
-        <div className="px-2">    
-          <div key={item._id} className="w-full">
+        <div key={item._id} className="px-2">    
+          <div  className="w-full">
             <Product
               _id={item._id}
               img={item.img}

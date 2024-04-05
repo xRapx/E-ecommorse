@@ -22,8 +22,8 @@ const BestSellers = () => {
       <Heading heading="Best sellers" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
       {saleProducts.map((item) =>(
-        <div className="px-2">    
-          <div key={item._id} className="w-full">
+        <div key={item._id} className="px-2">    
+          <div  className="w-full">
             <Product
               _id={item._id}
               img={item.img}
