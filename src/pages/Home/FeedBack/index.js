@@ -2,6 +2,7 @@
 function FeedBack() {
   return (
     <div className="relative isolate bg-white pb-32 pt-24 sm:pt-32 dark:bg-slate-900">
+    
       <div
         className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
         aria-hidden="true"
@@ -26,6 +27,7 @@ function FeedBack() {
           }}
         ></div>
       </div>
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600 dark:text-indigo-300">
