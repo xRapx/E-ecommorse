@@ -12,7 +12,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 
 import FlexHeader from "../CustomLayout/FlexHeader";
-import { cateloryItems } from "../../../contans";
+// import { cateloryItems } from "../../../contans";
+import {data} from "../../../contans/db"
 import { logout } from "../../../redux/reducer/userReducer";
 
 function HeaderBottom() {
@@ -71,8 +72,8 @@ function HeaderBottom() {
 	};
   
 	useEffect(() => {
-	  const filtered = cateloryItems.filter((item) =>
-		item.productName.toLowerCase().includes(searchQuery.toLowerCase())
+	  const filtered = data.filter((item) =>
+		item.title.toLowerCase().includes(searchQuery.toLowerCase())
 	  );
 	  setFilteredProducts(filtered);
 	}, [searchQuery]);
@@ -82,7 +83,8 @@ function HeaderBottom() {
 		<div className="max-w-container mx-auto">
 		  <FlexHeader className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full px-4 pb-4 lg:pb-0 h-full lg:h-24">
 {/**==================Sub Menu ============================= */}
-			<div
+<div></div>
+			{/* <div
 			  onClick={() => setShow(!show)}
 			  ref={ref}
 			  className="flex h-14 cursor-pointer items-center gap-2 text-primeColor dark:text-white"
@@ -120,7 +122,7 @@ function HeaderBottom() {
 				  </Link>
 				</motion.ul>
 			  )}
-			</div>
+			</div> */}
 {/**======================== Search Query ======================================== */}	
 			<div className="relative w-full lg:w-[600px] h-[50px] text-base text-primeColor bg-white flex items-center gap-2 justify-between px-6 rounded-xl">
 			  <input
@@ -131,16 +133,16 @@ function HeaderBottom() {
 				placeholder="Search your products here"
 			  />
 			  <FaSearch className="w-5 h-5" />
-			  {searchQuery && (
+			  {searchQuery?.length && (
 				<div
 				  className={`w-full mx-auto h-96 bg-white top-16 absolute left-0 z-50 overflow-y-scroll shadow-2xl scrollbar-hide cursor-pointer`}
 				>
-				  {searchQuery &&
-					filteredProducts.map((item) => (
+				  {searchQuery?.length &&
+					filteredProducts?.map((item) => (
 					  <div
 						onClick={() =>
 						  navigate(
-							`/product/${item.productName
+							`/product/${item.title
 							  .toLowerCase()
 							  .split(" ")
 							  .join("")}`,
@@ -159,17 +161,18 @@ function HeaderBottom() {
 						<img className="w-24" src={item.img} alt="productImg" />
 						<div className="flex flex-col gap-1">
 						  <p className="font-semibold text-lg">
-							{item.productName}
+							{item.title}
 						  </p>
 						  <p className="text-xs">
-							{item.des.length > 100
+							{item.category}
+							{/* {item.des.length > 100
 							  ? `${item.des.slice(0, 100)}...`
-							  : item.des}
+							  : item.des} */}
 						  </p>
 						  <p className="text-sm">
 							Price:{" "}
 							<span className="text-primeColor font-semibold">
-							  ${item.price}
+							  {item.price}
 							</span>
 						  </p>
 						</div>
@@ -198,50 +201,52 @@ function HeaderBottom() {
 			) 
 			: 
 			(
-				<div 
-				href={ref}
-				onClick={() => setShowUser(!showUser)}
-				className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
+			<div 		
+			className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative"
 			>
-			  <div className="flex" >
-				<FaUser className="dark:text-white" />
-				<FaCaretDown  className="dark:text-white"/>
-			  </div>
-			  { showUser && (
-				<motion.ul
-				  initial={{ y: 30, opacity: 0 }}                    
-				  animate={{ y: 0, opacity: 1 }}
-				  transition={{ duration: 0.5 }}
-				  className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"				  
-				>
-				{!user && (
-					  <Fragment>
-						<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-						  Details
-						</li>
-						<Link  to="/user">
+				  <div className="flex" 
+				  	href={ref}
+					onClick={() => setShowUser(!showUser)}>
+					<FaUser className="dark:text-white" />
+					<FaCaretDown  className="dark:text-white"/>
+				  </div>
+				  { showUser && (
+					<motion.ul
+					  initial={{ y: 30, opacity: 0 }}                    
+					  animate={{ y: 0, opacity: 1 }}
+					  transition={{ duration: 0.5 }}
+					  className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"				  
+					>
+					{!user && (
+						  <Fragment>
 							<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-							Profile
+							  Details
 							</li>
-						</Link>													
-						<li 
-							onClick={handleLogout }
-							className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-						  Log out
-						</li>					
-					  </Fragment>
-					)}
-				 </motion.ul>
-			  )}
-			  <Link to="/cart">
-				<div className="relative">
-				  <FaShoppingCart className="dark:text-white"/>
-				  <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
-					{products.length > 0 ? products.length : 0}
-				  </span>
-				</div>
-			  </Link>
-			  <BsSuitHeartFill className="dark:text-white"/>	 
+							<Link  to="/user">
+								<li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+								Profile
+								</li>
+							</Link>													
+							<li 
+								onClick={handleLogout }
+								className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+							  Log out
+							</li>					
+						  </Fragment>
+						)}
+					 </motion.ul>
+				  )}
+				
+					 <Link to="/cart">
+					 <div className="relative">
+					   <FaShoppingCart className="dark:text-white"/>
+					   <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
+						 {products.length > 0 ? products.length : 0}
+					   </span>
+					 </div>
+				   </Link>
+				   <BsSuitHeartFill className="dark:text-white"/>	
+				
 			</div>
 			)}
 		  </FlexHeader>

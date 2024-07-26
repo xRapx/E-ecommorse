@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import ItemCard from "./ItemCart";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 import emptyCart from "../../assets/images/emptyCart.png"
-import { resetCart } from "../../redux/reducer/productReducer";
+import { addToCart, resetCart } from "../../redux/reducer/productReducer";
+import { toast } from "react-toastify";
 
 
 function Cart () {
@@ -106,8 +107,8 @@ function Cart () {
 					  </p>
 					</div>
 					<div className="flex justify-end">
-					  <Link to="/paymentgateway">
-						<button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300 ">
+					  <Link to="/payment">
+						<button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
 						  Proceed to Checkout
 						</button>
 					  </Link>

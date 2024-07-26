@@ -8,7 +8,7 @@ import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts
 const Shop = () => {
   
 
-  const [itemsPerPage, setItemsPerPage] = useState(40);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
   console.log(itemsPerPage)
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);

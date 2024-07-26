@@ -66,10 +66,10 @@ function Product(props) {
 	return (
     <Fragment>
     <div className="max-w-2xl mx-auto relative">   
-      <div className="bg-white shadow-md rounded-lg max-w-md dark:bg-gray-800 dark:border-gray-700 ">
+      <div className="bg-white shadow-md rounded-lg max-w-md dark:bg-gray-800 dark:border-gray-700">
         <div onClick={handleProductDetails}>
             <Link to='/'>
-                <img className="rounded-t-lg p-8 w-full min-h-59" src={props.img} alt="product" />
+                <img className="rounded-t-lg p-8 w-full h-[229px] object-contain" src={props.img} alt="product" />
             </Link>
             <div className="absolute top-0 left-2">
                 {props.badge && <Badge text="New" />}
@@ -113,7 +113,7 @@ function Product(props) {
               <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">5.0</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">{props.price}</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">{`$${props.price}`}</span>
               <span
                   onClick={handleWishList}
                   className="text-[#767676] hover:text-red-600 text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-stone-100 flex items-center justify-center gap-2 hover:cursor-pointer pb-1 duration-300"
