@@ -4,7 +4,6 @@ import Product from "../../Products/Product";
 import { useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
 import { data } from "../../../../contans/db";
-import { useParams } from "react-router-dom";
 
 
 //xét điều kiện để render item products
@@ -31,6 +30,7 @@ function Items ({currentItems,selectedCompany ,selectedCategories }){
 						img={item.img}
 						title={item.title}
 						price={item.price}
+						new_price={item.new_price}
 						color={item.color}
 						badge={item.badge}
 						des={item.des}

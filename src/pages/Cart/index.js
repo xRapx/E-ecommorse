@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ItemCard from "./ItemCart";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 import emptyCart from "../../assets/images/emptyCart.png"
-import { addToCart, resetCart } from "../../redux/reducer/productReducer";
-import { toast } from "react-toastify";
+import {resetCart } from "../../redux/reducer/productReducer";
+// import { toast } from "react-toastify";
 
 
 function Cart () {
+	const navigate = useNavigate()
 	const dispatch = useDispatch();
 // Khi nào có Response trả về từ server mới sử dụng mã này :	
 	const products = useSelector((state) => state.products.product );
-	console.log(products)
 		
 // Sử dụng tạm thời sản phẩm lưu trữ trong localStorage
 	// const Items = JSON.parse(localStorage.getItem("Products"))
@@ -22,31 +22,41 @@ function Cart () {
 //State tính tổng và ship	
 	const [totalAmt, setTotalAmt] = useState("");
 	const [shippingCharge, setShippingCharge] = useState("");
-//Tính tổng đơn hàng
+	//Tính tổng đơn hàng
+	
 	useEffect(() => {
 		let price = 0;
 		products.map((item) => {
-		price += item.price * item.quantity;
-		return price;
+			price += item.price * item.quantity;
+			return price;
 		});
 		setTotalAmt(price);
 	}, [products]);
-
-// Giảm phí ship
+	
+	// Giảm phí ship
 	useEffect(() => {
 		if (totalAmt <= 200) {
-		setShippingCharge(30);
+			setShippingCharge(30);
 		} else if (totalAmt <= 400) {
-		setShippingCharge(25);
+			setShippingCharge(25);
 		} else if (totalAmt > 401) {
-		setShippingCharge(20);
+			setShippingCharge(20);
 		}
 	}, [totalAmt]);
+	
+	const total = totalAmt + shippingCharge
+
+	function handleCheckout() {
+		navigate("/payment" ,{
+			state:{total,totalAmt,shippingCharge}
+		})	
+	}
 
 
 	return (
 		<div className="max-w-container mx-auto px-4">
 			<Breadcrumbs title="Cart"/>
+
 			{products.length > 0 ? (
 				<div className="pb-20">
 				<div className="w-full h-20 bg-[#F5F7F7] text-primeColor hidden lgl:grid grid-cols-5 place-content-center px-6 text-lg font-titleFont font-semibold">
@@ -62,7 +72,7 @@ function Cart () {
 					</div>
 				  ))}
 				</div>
-	  
+				{/* btn reset cart */}
 				<button
 				  onClick={() => dispatch(resetCart())}
 				  className="py-2 px-10 bg-red-500 text-white font-semibold uppercase mb-4 hover:bg-red-700 duration-300"
@@ -71,6 +81,7 @@ function Cart () {
 				</button>
 	  
 				<div className="flex flex-col mdl:flex-row justify-between border py-4 px-4 items-center gap-2 mdl:gap-0">
+				{/* Add coupon */}
 				  <div className="flex items-center gap-4">
 					<input
 					  className="w-44 mdl:w-52 h-8 px-4 border text-primeColor text-sm outline-none border-gray-400"
@@ -83,6 +94,8 @@ function Cart () {
 				  </div>
 				  <p className="text-lg font-semibold dark:text-white">Update Cart</p>
 				</div>
+
+				{/* total price */}
 				<div className="max-w-7xl gap-4 flex justify-end mt-4">
 				  <div className="w-96 flex flex-col gap-4">
 					<h1 className="text-2xl font-semibold text-right dark:text-white">Cart totals</h1>
@@ -102,16 +115,17 @@ function Cart () {
 					  <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium dark:text-white">
 						Total
 						<span className="font-bold tracking-wide text-lg font-titleFont dark:text-white">
-						  ${totalAmt + shippingCharge}
+						  ${total}
 						</span>
 					  </p>
 					</div>
 					<div className="flex justify-end">
-					  <Link to="/payment">
-						<button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
+						<button 
+							className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300"
+				  			onClick={handleCheckout}
+						>
 						  Proceed to Checkout
-						</button>
-					  </Link>
+						</button>					 
 					</div>
 				  </div>
 				</div>
@@ -123,14 +137,15 @@ function Cart () {
 				transition={{ duration: 0.4 }}
 				className="flex flex-col mdl:flex-row justify-center items-center gap-4 pb-20"
 				>
-			<div>
+				<div>
 					<img
 					className="w-80 rounded-lg p-4 mx-auto"
 					src={emptyCart}
 					alt="emptyCart"
 					/>
 				</div>	
-				<div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
+
+				<div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md 		shadow-lg">
 					<h1 className="font-titleFont text-xl font-bold uppercase">
 					Your Cart feels lonely.
 					</h1>
@@ -144,6 +159,7 @@ function Cart () {
 					</button>
 					</Link>
 				</div>
+
 				</motion.div>
 			)
 

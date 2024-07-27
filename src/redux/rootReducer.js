@@ -4,6 +4,7 @@ import companyReducer from "./reducer/companyReducer"
 import categoriesReducer from "./reducer/categoryReducer"
 import arrangementReducer from "./reducer/arrangeReducer"
 import productsReducer from "./reducer/productReducer"
+import wishReducer from "./reducer/whishReducer"
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
 	categories: categoriesReducer,
 	arrangement: arrangementReducer,
 	products: productsReducer,
+	whish: wishReducer ,
   });
 
 

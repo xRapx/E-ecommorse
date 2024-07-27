@@ -18,6 +18,7 @@ import Special from './component/Special/Special';
 import Footer from './pages/Footer/Footer';
 import Profile from './pages/Account/User/Profile';
 import Payment from './pages/payment';
+import Whish from './pages/Wish';
 
 {/*====================Layout Component==================== */}
 const Layout = () =>{
@@ -59,6 +60,7 @@ const router = createBrowserRouter(
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/user" element={<Profile />}></Route>
           <Route path="/payment" element={<Payment />}></Route>
+          <Route path="/whish" element={<Whish />}></Route>
           
         {/*====================Product==================== */}
           <Route path="/product/:_id" element={<ProductDetails />}></Route>

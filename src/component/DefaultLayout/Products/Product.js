@@ -12,6 +12,7 @@ import Badge from "./Badge"
 import Image from "../CustomLayout/Image";
 import { addToCart } from "../../../redux/reducer/productReducer";
 import { ProductContext } from "../../../context/Product.Context";
+import { addWhish } from "../../../redux/reducer/whishReducer";
 
 function Product(props) {
   //================================ Redux ==================================
@@ -20,7 +21,7 @@ function Product(props) {
   const {arrangement} = ProductContext()
   // console.log(arrangement);
 
-  const [wishList, setWishList] = useState([]);
+  // const [wishList, setWishList] = useState([]);
 	const dispatch = useDispatch();
 	const _id = props.productName;
   const idString = (_id) => {
@@ -39,9 +40,17 @@ function Product(props) {
 	}
 
 	const handleWishList = () =>{
-    toast.success("Product add to wish List");
-    setWishList(wishList.push(props));
-    console.log(wishList);
+    const whish = {
+      _id: props._id,
+      title: props.title,
+      quantity: 1,
+      image: props.img,
+      badge: props.badge,
+      price: props.price,
+      new_price: props.new_price,
+      colors: props.color,
+    }
+    dispatch(addWhish(whish));
 	}
 //Check userToken from Redux
   const userToken = useSelector((state) => state.user.userToken);
@@ -52,16 +61,16 @@ function Product(props) {
     }
     const data = {
       _id: props._id,
-      name: props.title,
+      title: props.title,
       quantity: 1,
       image: props.img,
       badge: props.badge,
       price: props.price,
       colors: props.color,
     }
-
     dispatch(addToCart(data))
   }
+
 
 	return (
     <Fragment>
@@ -69,7 +78,7 @@ function Product(props) {
       <div className="bg-white shadow-md rounded-lg max-w-md dark:bg-gray-800 dark:border-gray-700">
         <div onClick={handleProductDetails}>
             <Link to='/'>
-                <img className="rounded-t-lg p-8 w-full h-[229px] object-contain" src={props.img} alt="product" />
+                <img className="rounded-t-lg p-8 w-full h-[229px] object-contain duration-300 hover:scale-105" src={props.img} alt="product" />
             </Link>
             <div className="absolute top-0 left-2">
                 {props.badge && <Badge text="New" />}
