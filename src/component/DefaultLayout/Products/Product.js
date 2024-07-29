@@ -31,6 +31,7 @@ function Product(props) {
 	const productItem = props;
 
   const navigate = useNavigate()
+
 	const handleProductDetails = () =>{
     navigate(`/product/${rootId}`, {
       state: {
@@ -68,6 +69,7 @@ function Product(props) {
       price: props.price,
       colors: props.color,
     }
+    console.log(data)
     dispatch(addToCart(data))
   }
 

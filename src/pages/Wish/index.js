@@ -1,12 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { resetWhish } from "../../redux/reducer/whishReducer";
+import { resetWhish, updateWhish } from "../../redux/reducer/whishReducer";
+import { addToCart } from "../../redux/reducer/productReducer";
 // import { useLocation } from "react-router-dom"
 
 export default function Whish() {
   const whish = useSelector((state) => state.whish.whish);
   const dispatch = useDispatch();
 
-  console.log(whish);
+  // const [whishList , setWishList] = useState(whish)
+  
+  function handleSubmit(item) {
+    dispatch(addToCart(item))
+    dispatch(updateWhish(item))
+  }
 
   return (
     <>
@@ -46,6 +52,7 @@ export default function Whish() {
                   <button
                     type="button"
                     className="w-full flex items-center justify-center gap-3 mt-6 px-6 py-3 bg-blue-700 text-base text-white font-semibold rounded-xl"
+                    onClick={() => handleSubmit(item)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

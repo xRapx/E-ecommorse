@@ -12,8 +12,9 @@ import {resetCart } from "../../redux/reducer/productReducer";
 function Cart () {
 	const navigate = useNavigate()
 	const dispatch = useDispatch();
-// Khi nào có Response trả về từ server mới sử dụng mã này :	
+
 	const products = useSelector((state) => state.products.product );
+	console.log("Redux product" + products)
 		
 // Sử dụng tạm thời sản phẩm lưu trữ trong localStorage
 	// const Items = JSON.parse(localStorage.getItem("Products"))

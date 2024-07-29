@@ -28,9 +28,14 @@ const whishtSlice  = createSlice({
 		resetWhish: (state) => {
 			state.whish = []
 			toast.error('Reset Whish return empty')
+		},
+		updateWhish:(state,action) => {
+			const items = state.whish.filter(item => item._id !== action.payload._id)
+			state.whish = items
+			toast.success('pass Products Whish Success!')
 		}
 	},
 })
 
-export const {addWhish , resetWhish} = whishtSlice.actions
+export const {addWhish , resetWhish,updateWhish} = whishtSlice.actions
 export default whishtSlice.reducer
