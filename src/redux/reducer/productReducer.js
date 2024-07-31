@@ -37,21 +37,21 @@ const productsSlice  = createSlice({
 			toast.error('Removed Product from cart')	
 		},
 		increaseQuantity:(state,action) =>{
-			const item = state.product.find(
+			const items = state.product.find(
 				item => item._id === action.payload._id
 			)
-			if(item){
-				item.quantity += 1;
+			if(items){
+				items.quantity += 1;
 			}
 		},
 		drecreaseQuantity:(state,action) =>{
-			const item = state.product.find(
+			const items= state.product.find(
 				item => item._id === action.payload._id
 			)
-			if(item.quantity === 1){
-				item.quantity = 1
+			if(items.quantity === 1){
+				items.quantity = 1
             }else{
-				item.quantity -= 1;
+				items.quantity -= 1;
 			}
 		},
 	},

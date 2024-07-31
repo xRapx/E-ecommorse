@@ -6,7 +6,7 @@ import { GoTriangleDown } from "react-icons/go";
 // import { handleArrangement } from "../../../../redux/reducer/arrangeReducer";
 import { ProductContext } from "../../../../context/Product.Context";
 
-const ProductBanner = ({ itemsPerPageFromBanner }) => {
+const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
 //================== Redux ==================================
   // const dispatch = useDispatch()
   // const [arrangement , setArrangement] = useState(false)
@@ -82,10 +82,11 @@ const ProductBanner = ({ itemsPerPageFromBanner }) => {
         <div className="flex items-center gap-2 text-base text-[#767676] dark:text-white relative">
           <label className="block">Sort by:</label>
           <select
-            // onChange={(e) => setSelected(e.target.value)}
+            onChange={(e) => classsifyPageFromBanner(e.target.value)}
             id="countries"
             className="w-32 md:w-52 border-[1px] border-gray-200 py-1 px-4 cursor-pointer text-primeColor text-base block dark:placeholder-gray-400 appearance-none focus-within:outline-none focus-visible:border-primeColor"
           >
+            <option value="">ALL</option>
             <option value="Best Sellers">Best Sellers</option>
             <option value="New Arrival">New Arrival</option>
             <option value="Featured">Featured</option>

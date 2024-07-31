@@ -9,7 +9,7 @@ const Sale = () => {
       <div className="bg-[#f3f3f3] w-full md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center items-center text-black">
         <div className="aspect-w-4 aspect-h-3 w-full mb-4">
           <Image
-            className="h-full w-full object-cover"
+            className="h-full w-[420px] object-cover"
             imgSrc={
               "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg"
             }
@@ -40,7 +40,7 @@ const Sale = () => {
         <div className="h-1/2 w-full dark:bg-white">         
            <div className="aspect-w-4 aspect-h-3 w-full mb-4 ">
               <Image
-                className="h-full w-full object-cover"
+                className="h-full w-[420px] object-cover"
                 imgSrc={
                   "https://m.media-amazon.com/images/I/71oEKkghg-L._AC_UX575_.jpg"
                 }
@@ -69,7 +69,7 @@ const Sale = () => {
         <div className="h-1/2 w-full dark:bg-white">
           <div className="aspect-w-4 aspect-h-3 w-full mb-4">
             <Image
-              className="h-full w-full object-cover"
+              className="h-full w-[420px] object-cover"
               imgSrc={
                 "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg"
               }

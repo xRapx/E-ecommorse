@@ -7,7 +7,7 @@ import { data } from "../../../../contans/db";
 
 
 //xét điều kiện để render item products
-function Items ({currentItems,selectedCompany ,selectedCategories }){
+function Items ({currentItems,selectedCompany ,selectedCategories ,classify}){
 
 	//when user filter	company && category
 		const filterItems = currentItems.filter((item) =>{			
@@ -16,8 +16,12 @@ function Items ({currentItems,selectedCompany ,selectedCategories }){
 	
 	//khi người dùng chọn filter vào Loại sản phẩm		
 			const isCategorySelected = selectedCategories.length === 0 || selectedCategories.some((category) => category.title === item.category) 
+
+			const isClassify = classify ? item.classify === classify : true
+
+			
 		
-		return  isCompanySelected && isCategorySelected
+		return  isCompanySelected && isCategorySelected && isClassify
 		})
 	
 	
@@ -43,7 +47,7 @@ function Items ({currentItems,selectedCompany ,selectedCategories }){
 	)
 }
 // Mặc định 1 trang có 48 item
-function Pagination({itemsPerPage }) { // số lượng là 3
+function Pagination({itemsPerPage,classify }) { // số lượng là 3
 
 //Ban dầu page
 	const [itemOffset, setItemOffset] = useState(0);
@@ -89,6 +93,7 @@ function Pagination({itemsPerPage }) { // số lượng là 3
 			currentItems={currentItems}
 			selectedCompany={selectedCompany}
 			selectedCategories={selectedCategories}
+			classify={classify}
 	 	 />{" "}
 
 		</div>

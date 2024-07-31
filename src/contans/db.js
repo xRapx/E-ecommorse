@@ -10,7 +10,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "white",
+    classify: "Best Sellers",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -38,7 +38,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "red",
+    classify: "New Arrival",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -67,7 +67,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "green",
+    classify: "Featured",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -95,7 +95,7 @@ export const data = [
     new_price: 200,
     sale: false,
     company: "Adidas",
-    color: "black",
+    classify: "Final Offer",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -123,7 +123,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Vans",
-    color: "green",
+    classify: "Best Sellers",
     category: "Flats",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -151,7 +151,7 @@ export const data = [
     new_price: 50,
     sale: true,
     company: "Adidas",
-    color: "black",
+    classify: "New Arrival",
     category: "Flats",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -181,7 +181,7 @@ export const data = [
 
     sale: true,
     company: "Vans",
-    color: "white",
+    classify: "Featured",
     category: "Flats",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -210,7 +210,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "green",
+    classify: "Final Offer",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -239,7 +239,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Adidas",
-    color: "blue",
+    classify: "Best Sellers",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -268,7 +268,7 @@ export const data = [
     new_price: 150,
     sale: true,
     company: "Puma",
-    color: "green",
+    classify: "New Arrival",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -296,7 +296,7 @@ export const data = [
     new_price: 150,
     sale: false,
     company: "Puma",
-    color: "red",
+    classify: "Featured",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -324,7 +324,7 @@ export const data = [
     new_price: 150,
     sale: false,
     company: "Puma",
-    color: "black",
+    classify: "Final Offer",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -352,7 +352,7 @@ export const data = [
     new_price: 150,
     sale: true,
     company: "Puma",
-    color: "white",
+    classify: "Best Sellers",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -380,7 +380,7 @@ export const data = [
     new_price: 150,
     sale: false,
     company: "Puma",
-    color: "black",
+    classify: "New Arrival",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -409,7 +409,7 @@ export const data = [
     new_price: 100,
     sale: false,
     company: "Puma",
-    color: "green",
+    classify: "Featured",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -437,7 +437,7 @@ export const data = [
     new_price: 100,
     sale: true,
     company: "Vans",
-    color: "red",
+    classify: "Final Offer",
     category: "Flats",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -465,7 +465,7 @@ export const data = [
     new_price: 100,
     sale: true,
     company: "Vans",
-    color: "white",
+    classify: "Best Sellers",
     category: "Sandals",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -493,7 +493,7 @@ export const data = [
     new_price: 100,
     sale: true,
     company: "Vans",
-    color: "blue",
+    classify: "New Arrival",
     category: "Sandals",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -519,10 +519,9 @@ export const data = [
     price: 140.0,
     badge: true,
     new_price: 50,
-
     sale: true,
     company: "Nike",
-    color: "black",
+    classify: "Featured",
     category: "Sandals",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -551,7 +550,7 @@ export const data = [
 
     sale: true,
     company: "Vans",
-    color: "black",
+    classify: "Final Offer",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -579,7 +578,7 @@ export const data = [
     new_price: 100,
     sale: true,
     company: "puma",
-    color: "black",
+    classify: "Best Sellers",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -607,7 +606,7 @@ export const data = [
     new_price: 150,
     sale: true,
     company: "Nike",
-    color: "red",
+    classify: "New Arrival",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -635,7 +634,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "red",
+    classify: "Featured",
     category: "Sneakers",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -664,7 +663,7 @@ export const data = [
     new_price: 200,
     sale: true,
     company: "Nike",
-    color: "black",
+    classify: "Final Offer",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -692,7 +691,7 @@ export const data = [
     new_price: 50,
     sale: true,
     company: "Adidas",
-    color: "black",
+    classify: "Best Sellers",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -720,7 +719,7 @@ export const data = [
     new_price: 150,
     sale: true,
     company: "Adidas",
-    color: "white",
+    classify: "New Arrival",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -749,7 +748,7 @@ export const data = [
 
     sale: true,
     company: "Adidas",
-    color: "black",
+    classify: "Featured",
     category: "Heels",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },
@@ -778,7 +777,7 @@ export const data = [
 
     sale: true,
     company: "Adidas",
-    color: "black",
+    classify: "Final Offer",
     category: "Flats",
     ficheTech: [
       { label: "Name : Descreption 2 ", value: "Text : Descreption 2" },

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { resetWhish, updateWhish } from "../../redux/reducer/whishReducer";
 import { addToCart } from "../../redux/reducer/productReducer";
+import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
 // import { useLocation } from "react-router-dom"
 
 export default function Whish() {
@@ -17,10 +18,7 @@ export default function Whish() {
   return (
     <>
       <div className="font-[sans-serif] py-4 mx-auto lg:max-w-6xl max-w-lg md:max-w-full">
-        <h2 className="text-4xl font-extrabold text-gray-800 mb-12 dark:text-white">
-          Your Whish Here
-        </h2>
-
+      <Breadcrumbs title="Whish"/>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {whish.map((item) => {
             return (
@@ -77,7 +75,7 @@ export default function Whish() {
               onClick={() => dispatch(resetWhish())}
               className="py-2 px-10 bg-red-500 text-white font-semibold uppercase mb-4 hover:bg-red-700 duration-300"
             >
-              Reset cart
+              Reset Whish
             </button>
         </div>
       </div>

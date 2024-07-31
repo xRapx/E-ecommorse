@@ -57,11 +57,10 @@ const router = createBrowserRouter(
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/cart" element={<Cart />}></Route>
           <Route path="/user" element={<Profile />}></Route>
-          <Route path="/payment" element={<Payment />}></Route>
-          <Route path="/whish" element={<Whish />}></Route>
-          
+        <Route path="/whish" element={<Whish />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
         {/*====================Product==================== */}
           <Route path="/product/:_id" element={<ProductDetails />}></Route>
         </Route>

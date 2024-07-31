@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
 import { MdClose, MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-import logo1 from '../../../assets/images/logo1.jpg'
+import logo1 from '../../../assets/images/coffee_logo.png'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"

@@ -6,13 +6,19 @@ import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts
 
 
 const Shop = () => {
-  
 
   const [itemsPerPage, setItemsPerPage] = useState(20);
-  console.log(itemsPerPage)
+  const [classify, setClassify] = useState("");
+
+  // console.log(itemsPerPage)
+  // console.log(classify)
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);
   };
+  const classifyFromBanner = (classify) => {
+    setClassify(classify);
+  };
+
 
   return (
     <div className="max-w-container mx-auto px-4">
@@ -23,8 +29,8 @@ const Shop = () => {
           <ShopSideNav />
         </div>
         <div className="w-full mdl:w-[80%] lgl:w-[75%] h-full flex flex-col gap-10">
-          <ProductBanner itemsPerPageFromBanner={itemsPerPageFromBanner}/>
-          <Pagination itemsPerPage={itemsPerPage} />
+          <ProductBanner itemsPerPageFromBanner={itemsPerPageFromBanner} classsifyPageFromBanner={classifyFromBanner}/>
+          <Pagination itemsPerPage={itemsPerPage} classify={classify} />
         </div>
       </div>
       {/* ================= Products End here ===================== */}
