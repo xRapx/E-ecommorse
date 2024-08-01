@@ -5,35 +5,7 @@ import { useLocation } from "react-router-dom";
 import ProductInfo from "./ProductInfo";
 import NewProducts from "../Home/NewProducts";
 import BestSellers from "../Home/BestSeller";
-// import CKEditorContext from './CKEditor';
 
-// const tabs = [
-// 	{
-// 		id:" Fiche Technique",
-// 		label:  "Fiche Technique"
-// 	},
-// 	{
-// 		id: "Description",
-// 		label: "Description",
-// 		content:
-// 		  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis.",
-// 	  },
-// 	  {
-// 		id: "Video",
-// 		label: "Video",
-// 		content: (
-// 		  <iframe
-// 			width="560"
-// 			height="315"
-// 			src=""
-// 			title="YouTube Video"
-// 			// frameBorder="0"
-// 			allowFullScreen
-// 		  ></iframe>
-// 		),
-// 	  },
-//add more tabs as needed
-// ]
 
 const ProductDetails = () => {
   const location = useLocation();

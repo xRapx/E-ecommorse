@@ -12,7 +12,9 @@ const Category = () => {
   const checkedCategorys = useSelector(
     (state) => state.categories.checkedCategorys
   );
-  // console.log(checkedCategorys)
+
+  console.log(checkedCategorys)
+  
   const dispatch = useDispatch();
 
   const category = useMemo(() => [

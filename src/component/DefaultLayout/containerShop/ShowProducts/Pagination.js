@@ -57,7 +57,6 @@ function Pagination({itemsPerPage,classify }) { // số lượng là 3
 	const endOffset = itemOffset + itemsPerPage;
 
 	const currentItems = data.slice(itemOffset, endOffset);
-	console.log(currentItems)
 	
 
 //useSelector gửi payload sản phẩm được chọn về Kho lưu trữ store trong reducer trả về true/false

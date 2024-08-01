@@ -30,7 +30,7 @@ const ProductInfo = ({ productInfo }) => {
   const handleAddToCart = () => {
 
 	const data ={
-		_id: productInfo.id,
+		_id: productInfo._id,
 		name: productInfo.title,
 		quantity: 1,
 		image: productInfo.img,

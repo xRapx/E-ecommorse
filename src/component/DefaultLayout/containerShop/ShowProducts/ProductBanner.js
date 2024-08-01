@@ -6,30 +6,30 @@ import { GoTriangleDown } from "react-icons/go";
 // import { handleArrangement } from "../../../../redux/reducer/arrangeReducer";
 import { ProductContext } from "../../../../context/Product.Context";
 
-const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
-//================== Redux ==================================
+const ProductBanner = ({ itemsPerPageFromBanner, classsifyPageFromBanner }) => {
+  //================== Redux ==================================
   // const dispatch = useDispatch()
   // const [arrangement , setArrangement] = useState(false)
-//================== Context ==================================
-  const {setArrangement,arrangement} = ProductContext()
+  //================== Context ==================================
+  const { setArrangement, arrangement } = ProductContext();
 
   const handleGridClick = () => {
-   if(!arrangement){
-      const newArrange = !arrangement // false
-    setArrangement(newArrange)
+    if (!arrangement) {
+      const newArrange = !arrangement; // false
+      setArrangement(newArrange);
       // dispatch(handleArrangement(newArrange))
-   }
-  }
+    }
+  };
 
   const handleListClick = () => {
-    if(arrangement){
-       const newArrange = !arrangement // true
-    setArrangement(newArrange)
+    if (arrangement) {
+      const newArrange = !arrangement; // true
+      setArrangement(newArrange);
       //  dispatch(handleArrangement(newArrange))
     }
-   }
+  };
 
-    // const [selected, setSelected] = useState("");
+  // const [selected, setSelected] = useState("");
   const [girdViewActive, setGridViewActive] = useState(true);
   const [listViewActive, setListViewActive] = useState(false);
   useEffect(() => {
@@ -48,10 +48,6 @@ const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
 
   return (
     <div className="w-full flex flex-col md:flex-row md:items-center justify-between">
-      {/* =========================================================
-                            Left Part Start here
-        ======================================================== */}
-
       <div className="flex items-center gap-4">
         <span
           className={`${
@@ -60,7 +56,7 @@ const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
               : "border-[1px] border-gray-300 text-[#737373]"
           } w-8 h-8 text-lg flex items-center justify-center cursor-pointer gridView`}
         >
-          <BsGridFill onClick={handleGridClick }/>
+          <BsGridFill onClick={handleGridClick} />
         </span>
         <span
           className={`${
@@ -69,15 +65,10 @@ const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
               : "border-[1px] border-gray-300 text-[#737373]"
           } w-8 h-8 text-base flex items-center justify-center cursor-pointer listView`}
         >
-          <ImList onClick={handleListClick }/>
+          <ImList onClick={handleListClick} />
         </span>
       </div>
-      {/* =========================================================
-                            Left Part End here
-        ======================================================== */}
-      {/* =========================================================
-                            Right Part STart here
-        ======================================================== */}
+
       <div className="flex items-center gap-2 md:gap-6 mt-4 md:mt-0">
         <div className="flex items-center gap-2 text-base text-[#767676] dark:text-white relative">
           <label className="block">Sort by:</label>
@@ -96,6 +87,7 @@ const ProductBanner = ({ itemsPerPageFromBanner,classsifyPageFromBanner }) => {
             <GoTriangleDown />
           </span>
         </div>
+
         <div className="flex items-center gap-2 text-[#767676] dark:text-white relative">
           <label className="block">Show:</label>
           <select
