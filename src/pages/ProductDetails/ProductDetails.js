@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 // import { FaDownload } from 'react-icons/fa';
 import ProductInfo from "./ProductInfo";
 import NewProducts from "../Home/NewProducts";
-import BestSellers from "../Home/BestSeller";
+import BestSellers from "../Shop/Category";
 
 
 const ProductDetails = () => {

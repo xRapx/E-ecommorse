@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 // Thư viện slick để thay đổi cấu hình slider
 import Slider from "react-slick";
 
+
+import BannerTop from "../BannerTop";
 import Image from "../../../component/DefaultLayout/CustomLayout/Image";
 
 const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
@@ -41,13 +43,13 @@ const CustomSlide = ({ Subtext, imgSrc, text, buttonLink, buttonText }) => (
         {Subtext}
       </p>
       <Link to={buttonLink}>
-        <button className="elative py-2 px-8 shadow-2xl text-white text-base font-bold nded-full overflow-hidden bg-slate-900 dark:bg-white dark:text-slate-900 rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-blue-500 before:to-blue-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0 mr-4">
+        <button className="elative py-2 px-8  text-white text-base font-bold  overflow-hidden bg-slate-900 dark:bg-white dark:text-slate-900 rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-blue-500 before:to-blue-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0 mr-4">
           {buttonText}
         </button>
       </Link>
     </div>
     <div style={{ marginLeft: "100px" }}>
-      <Image imgSrc={imgSrc} className="rounded-t-lg p-8 w-full min-h-59 min-w-128"/>
+      <Image imgSrc={imgSrc} className="rounded-t-lg p-8 w-full object-contain min-h-59 min-w-128"/>
     </div>
   </div>
 );
@@ -178,11 +180,18 @@ const Banner = () => {
   ];
   return (
     <div className="w-full bg-white">
-      <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <CustomSlide key={index} {...slide} />
-        ))}
-      </Slider>
+    {/* Start Hero */}
+      <BannerTop/>
+    {/* End Hero */}
+
+    {/* Slider */}
+      <div className="">
+        <Slider {...settings}>
+          {slides.map((slide, index) => (
+            <CustomSlide key={index} {...slide} />
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs";
+import FeedBack from "../Home/FeedBack";
 
 const About = () => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const About = () => {
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="About" prevLocation={prevLocation} />
       <section className="relative pt-12 bg-blueGray-50">
+        <FeedBack/>
         <div className="items-center flex flex-wrap">
           <div className="w-full md:w-4/12 ml-auto mr-auto px-4">
             <img

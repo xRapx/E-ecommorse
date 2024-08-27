@@ -43,11 +43,11 @@ const NewProducts = () => {
     ],
   };
   return (
-    <div className="w-full pb-16">
+    <div className="w-full mt-4 pb-16">
       <Heading heading="New Products" />
       <Slider {...settings}>     
         {data.map((item) =>(
-        <div key={item._id} className="px-2">    
+        <div key={item._id} className="px-2 mt-4">    
           <div  className="w-full">
             <Product
               _id={item._id}

@@ -3,6 +3,7 @@ import Breadcrumbs from "../../component/DefaultLayout/containerShop/Breadcrumbs
 import ShopSideNav from "../../component/DefaultLayout/containerShop/ShowProducts/ShopSideNav";
 import ProductBanner from "../../component/DefaultLayout/containerShop/ShowProducts/ProductBanner";
 import Pagination from "../../component/DefaultLayout/containerShop/ShowProducts/Pagination";
+import Category from "./Category";
 
 
 const Shop = () => {
@@ -23,6 +24,7 @@ const Shop = () => {
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Products" />
+      <Category/>
       {/* ================= Products Start here =================== */}
       <div className="w-full h-full flex pb-20 gap-10">
         <div className="w-[20%] lgl:w-[25%] hidden mdl:inline-flex h-full">

@@ -5,10 +5,11 @@ import {motion} from 'framer-motion'
 import {HiMenuAlt2} from "react-icons/hi"
 import { MdClose, MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
-import logo1 from '../../../assets/images/coffee_logo.png'
+import logo1 from '../../../assets/king_shop.png'
 import Image from '../../DefaultLayout/CustomLayout/Image'
 import FlexHeader from "../CustomLayout/FlexHeader";
 import {navBarList} from "../../../contans"
+import Heading from "../Heading/Heading";
 // import { FaRegLightbulb } from "react-icons/fa";
 
 
@@ -69,9 +70,7 @@ function Header() {
 				<FlexHeader className='flex items-center justify-between h-full'>
 					<Link to='/'>
 	{/*=======================Logo Image ============================*/}				
-					<div className="w-16 h-16 overflow-hidden rounded-full">
-						<Image className="w-full h-full object-cover" imgSrc={logo1} />
-					</div>
+						<Heading colorTitle="Shop Dev"/>
 					</Link>
 	{/*=======================Dark Mode ============================*/}
 					<div className="flex text-2xl">

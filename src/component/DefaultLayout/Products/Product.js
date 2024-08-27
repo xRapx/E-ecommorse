@@ -78,14 +78,14 @@ function Product(props) {
     <Fragment>
     <div className="max-w-2xl mx-auto relative">   
       <div className="bg-white shadow-md rounded-lg max-w-md dark:bg-gray-800 dark:border-gray-700">
-        <div onClick={handleProductDetails}>
-            <Link to='/'>
-                <img className="rounded-t-lg p-8 w-full h-[229px] object-contain duration-300 hover:scale-105" src={props.img} alt="product" />
-            </Link>
-            <div className="absolute top-0 left-2">
-                {props.badge && <Badge text="New" />}
-            </div>
-        </div>
+          <div onClick={handleProductDetails}>
+              <Link to='/'>
+                  <img className="rounded-t-lg p-8 w-full h-[229px] object-contain duration-300 hover:scale-105" src={props.img} alt="product" />
+              </Link>
+              <div className="absolute top-0 left-2">
+                  {props.badge && <Badge text="New" />}
+              </div>
+          </div>
           <div className="px-5 pb-5">
             <Link to="/">
               <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">{props.title}</h3>
@@ -141,103 +141,6 @@ function Product(props) {
           </div>
       </div>
     </div>
-
-    {/* 
-      {arrangement ? (
-        <div className="w-full relative group">
-          <div className="max-w-80 max-h-80 relative overflow-y-hidden ">
-            <div onClick={handleProductDetails}>
-              <Image className="w-full h-full" imgSrc={props.img} />
-            </div>
-            <div className="absolute top-0 left-2">
-              {props.badge && <Badge text="New" />}
-            </div>
-            <div className="w-full h-32 absolute bg-white -bottom-[130px] group-hover:bottom-0 duration-700">
-              <ul className="w-full h-full flex flex-col items-end justify-center gap-2 font-titleFont px-2 border-l border-r">        
-                <li
-                  onClick={checkUserToken}
-                  className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-                >
-                  Add to Cart
-                  <span>
-                    <FaShoppingCart />
-                  </span>
-                </li>
-                <li
-                  onClick={handleProductDetails}
-                  className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-                >
-                  View Details
-                  <span className="text-lg">
-                    <MdOutlineLabelImportant />
-                  </span>
-                </li>
-                <li
-                  onClick={handleWishList}
-                  className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-                >
-                  Add to Wish List
-                  <span>
-                    <BsSuitHeartFill />
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="max-w-80 py-6 flex-col gap-1 border-[1px] bor">
-            <div className="flex items-center justify-between font-titleFont">
-              <h2 className="text-lg text-primeColor font-bold">
-              {props.title}
-              </h2>
-              <p className="text-[#767676] text-[14px]">${props.price}</p>
-            </div>
-            <div>
-              <p className="text-[#767676] text-[14px]">{props.color}</p>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <ul className="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
-          <li className="pb-3 sm:pb-4">
-            <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                <div className="flex-shrink-0">
-                  <Image className="w-8 h-8 rounded-full" imgSrc={props.img} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Neil Sims
-                  </p>
-                  <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                      email@flowbite.com
-                  </p>
-                </div>
-                <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $320
-                </div>
-            </div>
-          </li>
-          <li className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4 rtl:space-x-reverse">
-                <div className="flex-shrink-0">
-                  <Image className="w-8 h-8 rounded-full" imgSrc={props.img} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Bonnie Green
-                  </p>
-                  <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                      email@flowbite.com
-                  </p>
-                </div>
-                <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  $3467
-                </div>
-            </div>
-          </li>
-        </ul>
-      )
-    } 
-    */} 
     </Fragment>
 	 );
 }
